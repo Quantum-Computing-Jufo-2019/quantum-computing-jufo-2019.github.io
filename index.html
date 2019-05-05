@@ -1,0 +1,132 @@
+    <html lang="de">
+      <head>
+        <meta charset="utf-8">
+        <title>Quantencomputer Jugend Forscht</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js" async></script>
+        <script src="/js/script.js" async></script>
+      </head>
+      <body>
+        <div class="section" id="first_section">
+          <h1 id="main_headline">Lösung des n-Damenproblems auf einem adiabatischen Quantencomputer</h1>
+          <svg id="scroll_button" onclick="$('body').scrollTo('#second_section',{duration: 500, easing: 'swing'});" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--green2)" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+        </div>
+        <div class="section" id="second_section">
+          <h2 id="about_headline">About</h2>
+          <p id="about_text">
+            Auf einem n x n großen Schachfeld sollen n Damen so aufgestellt werden, dass keine Dame eine andere bedroht. Dieses klassische Schachproblem haben wir auf einem adiabatischen Quantencomputer gelöst. Des Weiteren konnten wir unsere Lösungsstrategien auf andere Optimierungsprobleme, wie z.B. Sudokus und das Springerproblem, übertragen.Bei unserer Arbeit ging es aber nicht um das Finden von Lösungen für das n-Damenproblem, wofür es bereits gut geeignete Algorithmen auf herkömmlichen Computern gibt, sondern viel mehr um die Aufbereitung des Problems, die notwendig ist, damit es mit dem von uns verwendeten Quantencomputer, einem sogenannten adiabatischen Quantum-Annealer, gelöst werden kann.Für unser Vorhaben mussten wir das Damenproblem in die Sprache der Mathematik übersetzen. Dabei galt es, eine Funktion zu definieren, die für jede Konstellation der Damen auf dem Schachbrett einen Wert zurückgibt, den man in der Optimierung als "Energie" der Verteilung bezeichnet. Die Aufgabe des Quantum-Annealers ist es dann, das globale Minimum dieser Energiefunktion und damit automatisch auch eine richtige Lösung zu finden. Welche Schwierigkeiten wir bewältigen mussten und zu welchen Ergebnissen wir beim Ausführen der Programme gekommen sind, können Sie in unserer Dokumentation lesen.
+          </p>
+        </div>
+        <div class="section" id="third_section">
+          <h2 id="history_title">Verlauf</h2>
+          <div id="history_container">
+            <div class="location">
+              <img class="location_icon" src="/assets/location.svg"></img>
+              <b class="location_text">Neumarkt in der Oberpfalz / Regionalentscheid</b>
+            </div>
+            <div class="gallerie" data-current_id="1">
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+              </div>
+              <div class="picture_container">
+                <img src="pictures/9.jpg" class="picture" data-id="1"></img>
+                <img src="pictures/1.jpeg" class="picture" data-id="2"></img>
+                <img src="pictures/2.jpg" class="picture" data-id="3"></img>
+              </div>
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+              </div>
+            </div>
+            <div class="news">
+              <img class="news_icon" src="/assets/share.svg"></img>
+              <a class="news_text" target="_blank" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/domspatzen-gewinnen-bei-jugend-forscht-21179-art1752772.html">Mittelbayerische</a>
+            </div>
+            <div class="y_spacer_medium"></div>
+            <div class="location">
+              <img class="location_icon" src="/assets/location.svg"></img>
+              <b class="location_text">Neutraubling / Vortrag bei der Krones AG</b>
+            </div>
+            <div class="gallerie" data-current_id="1">
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+              </div>
+              <div class="picture_container">
+                <img src="pictures/7.jpg" class="picture" data-id="1"></img>
+                <img src="pictures/8.jpeg" class="picture" data-id="2"></img>
+              </div>
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+              </div>
+            </div>
+
+            <div class="y_spacer_medium"></div>
+            <div class="location">
+              <img class="location_icon" src="/assets/location.svg"></img>
+              <b class="location_text">Vilsbiburg / Landesentscheid</b>
+            </div>
+            <div class="gallerie" data-current_id="1">
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+              </div>
+              <div class="picture_container">
+                <img src="pictures/3.jpg" class="picture" data-id="1"></img>
+                <img src="pictures/4.jpg" class="picture" data-id="2"></img>
+                <img src="pictures/5.jpg" class="picture" data-id="3"></img>
+                <img src="pictures/6.png" class="picture" data-id="4"></img>
+              </div>
+              <div class="gallerie_controll_container">
+                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+              </div>
+            </div>
+            <div class="news">
+              <img class="news_icon" src="/assets/share.svg"></img>
+              <a class="news_text" target="_blank" href="https://www.idowa.de/gallery.vilsbiburg-ueberraschende-konzepte-bei-jugend-forscht.78194094-a3b0-40f7-8b1d-e13d65c460de.html">Idowa</a>
+            </div>
+            <div class="news">
+              <img class="news_icon" src="/assets/share.svg"></img>
+              <a class="news_text" target="_blank" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/jugend-forscht-domspatzen-im-finale-21179-art1767967.html">Mittelbayerische</a>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="fourth_section">
+          <h2 id="downloads_headline">Downloads</h2>
+          <div id="downloads_flexbox">
+            <div class="download">
+              <a href="/downloads/dokumentation.pdf" target="_blank"><img class="download_icon" src="/assets/download.svg"></img></a>
+              <p class="download_text">Dokumentation</p>
+            </div>
+            <div class="download">
+              <a href="/downloads/resultsbook.pdf" target="_blank"><img class="download_icon" src="/assets/download.svg"></img></a>
+              <p class="download_text">Resultsbook</p>
+            </div>
+            <div class="download">
+              <a href="/downloads/plakate.zip" target="_blank"><img class="download_icon" src="/assets/download.svg"></img></a>
+              <p class="download_text">Plakate</p>
+            </div>
+            <div class="download">
+              <a href="/downloads/bildschirmpräsentation.pptx" target="_blank"><img class="download_icon" src="/assets/download.svg"></img></a>
+              <p class="download_text">Bildschirmpräsentation</p>
+            </div>
+            <div class="download">
+              <a href="https://play.google.com/store/apps/details?id=com.geniuseful.ndamen" target="_blank"><img class="download_icon" src="/assets/download.svg"></img></a>
+              <p class="download_text">N-Damen App (Play Store)</p>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="fifth_section">
+          <h2 id="thanks_headline">Wir bedanken uns bei:</h2>
+          <ul id="thanks_list">
+            <li>Rene Grünbauer (der beste Betreuer der Welt)</li>
+            <li>Dr. Patrick Glauner für die Einladung einen Vortrag für Krones zu geben</li>
+            <li>Dennis Willsch vom Forschungszentrum Jülich</li>
+            <li>Andreas Neunzer und Katharina Scharr für die großartigen Verbesserungsvorschläge</li>
+            <li>Pfleiderer und Dräxlmaier</li>
+          </ul>
+        </div>
+        <div class="section" id="footer_section">
+          <p class="footer_text">©Jakov Wallbrecher (14), Paul Schappert (15), Jonathan Treffler (16) , 2019</p>
+          <p class="footer_text">quantum@domspatzen.de</p>
+        </div>
+      </body>
+    </html>

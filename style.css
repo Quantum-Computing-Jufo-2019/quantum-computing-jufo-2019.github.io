@@ -1,0 +1,168 @@
+:root{
+  --green1: #C0CF3A;
+  --green2: #8AB833;
+  --green3: #549E39;
+}
+html{
+  overflow-y: visible;
+}
+body, html {
+  height: 100%;
+}
+body{
+  background-color: white;
+  border: none;
+  margin: 0;
+}
+p{
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+h1 , h2 , h3 , h4 , h5{
+  text-align: center;
+}
+@font-face {
+  font-family: polya;
+  src: url("/assets/POLYA.woff2");
+}
+.section:not(#footer_section){
+    padding-bottom: 8px;
+}
+#first_section{
+  width: 100%;
+  height: 100%;
+  background-color: var(--green2);
+}
+#main_headline{
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  font-family: "polya";
+  font-size: -webkit-xxx-large;
+  color: white;
+}
+#second_section{
+  width: 100%;
+  min-height: 100%;
+  background-color: white;
+}
+#scroll_button{
+  position: absolute;
+  bottom: 20px;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+#scroll_button:hover{
+  background-color: lightgray;
+}
+#about_text{
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 26px;
+}
+#third_section{
+  background-color: rgb(190, 215, 239);
+}
+#history_container{
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+}
+.y_spacer_medium{
+  margin-bottom: 25px;
+}
+.gallerie{
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  margin: auto;
+}
+.gallerie_controll_container{
+  width: 10%;
+  vertical-align: middle;
+  display: flex;
+}
+.gallerie_controll{
+  width: 100%;
+}
+.picture_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  width: 80%;
+}
+.picture{
+  height: 400px;
+}
+.picture:not(:last-child){
+  margin-right: 7px;
+}
+.location , .news{
+  margin: auto;
+}
+.location_text , .news_text{
+  vertical-align: super;
+  color: #ea4335;
+  text-decoration: none;
+}
+#fourth_section{
+  background-color: var(--green2);
+  width: 100%;
+  padding-bottom: 25px !important;
+}
+#downloads_headline , #history_title , #about_headline{
+  font-family: "polya";
+  margin: 0;
+  padding: 20px;
+}
+#downloads_table{
+  margin: auto;
+  width: 30%;
+}
+#footer_section{
+  width: 100%;
+  background-color: var(--green3);
+}
+.footer_text{
+  margin: 0px;
+  color: white;
+  text-align: center;
+}
+#downloads_flexbox{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+#fifth_section{
+  width: max-content;
+  margin: auto;
+}
+#thanks_list li{
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+.download{
+  margin: 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: var(--green3);
+  border-radius: 7px;
+  flex-grow: 200;
+  flex-shrink: 0;
+}
+.download_icon{
+  width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+.download_text{
+  text-align: center;
+  font-size: 20;
+}
