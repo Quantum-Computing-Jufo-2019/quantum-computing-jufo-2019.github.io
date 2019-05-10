@@ -24,6 +24,9 @@ h1 , h2 , h3 , h4 , h5{
   font-family: polya;
   src: url("/assets/POLYA.woff2");
 }
+.section{
+    width: 100%;
+}
 .section:not(#footer_section){
     padding-bottom: 8px;
 }
@@ -56,10 +59,12 @@ h1 , h2 , h3 , h4 , h5{
 #scroll_button:hover{
   background-color: lightgray;
 }
-#about_text{
-  margin-left: 10%;
-  margin-right: 10%;
-  font-size: 26px;
+.about_text{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 26px;
 }
 #third_section{
   background-color: rgb(190, 215, 239);
@@ -104,6 +109,17 @@ h1 , h2 , h3 , h4 , h5{
 .location , .news{
   margin: auto;
 }
+#upcoming_text{
+    margin-top: 15px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+#upcoming_container{
+    margin: auto;
+}
+.location_link{
+    text-decoration: none
+}
 .location_text , .news_text{
   vertical-align: super;
   color: #ea4335;
@@ -114,7 +130,7 @@ h1 , h2 , h3 , h4 , h5{
   width: 100%;
   padding-bottom: 25px !important;
 }
-#downloads_headline , #history_title , #about_headline{
+#downloads_headline , #history_title , #about_headline , #thanks_headline{
   font-family: "polya";
   margin: 0;
   padding: 20px;
@@ -126,6 +142,8 @@ h1 , h2 , h3 , h4 , h5{
 #footer_section{
   width: 100%;
   background-color: var(--green3);
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 .footer_text{
   margin: 0px;
@@ -139,9 +157,12 @@ h1 , h2 , h3 , h4 , h5{
   margin-right: 10%;
   margin-left: 10%;
 }
-#fifth_section{
-  width: max-content;
-  margin: auto;
+#fifth_section p, #fifth_section ul{
+    margin-left: 5%;
+    margin-right:5%;
+}
+#fifth_section li:not(:last-child){
+    margin-bottom: 3px;
 }
 #thanks_list li{
   font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
