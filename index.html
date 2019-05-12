@@ -1,13 +1,17 @@
     <html lang="de">
       <head>
         <meta charset="utf-8">
+        <meta name="google-site-verification" content="3muh7ZlUCWcxNvUuz4IPU5eLGjajeADIIrfic64nLLY" />
         <title>Quantencomputer Jugend Forscht</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js" async></script>
+        <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js" async></script>
         <script src="/js/script.js" async></script>
       </head>
-      <body>
+      <body onload="onload();">
+        <div id="zoom_blur_background" onclick="closeZoom();"></div>
+        <img id="zoomed_image" onclick="closeZoom();"></img>
         <div class="section" id="first_section">
           <h1 id="main_headline">Lösung des n-Damenproblems auf einem adiabatischen Quantencomputer</h1>
           <svg id="scroll_button" onclick="$('body').scrollTo('#second_section',{duration: 500, easing: 'swing'});" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--green2)" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
@@ -28,9 +32,13 @@
               <img class="location_icon" src="/assets/location.svg"></img>
               <b class="location_text">Neumarkt in der Oberpfalz / Regionalentscheid</b>
             </div>
+            <div class="date">
+              <img class="date_icon" src="/assets/calendar.svg"></img>
+              <span class="date_text">21. - 22.02.2019</span>
+            </div>
             <div class="gallerie" data-current_id="1">
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
               </div>
               <div class="picture_container">
                 <img src="pictures/9.jpg" class="picture" data-id="1"></img>
@@ -38,7 +46,7 @@
                 <img src="pictures/2.jpg" class="picture" data-id="3"></img>
               </div>
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
               </div>
             </div>
             <div class="news">
@@ -50,27 +58,36 @@
               <img class="location_icon" src="/assets/location.svg"></img>
               <b class="location_text">Neutraubling / Vortrag bei der Krones AG</b>
             </div>
+            <div class="date">
+              <img class="date_icon" src="/assets/calendar.svg"></img>
+              <span class="date_text">25.3.2019</span>
+            </div>
             <div class="gallerie" data-current_id="1">
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
               </div>
               <div class="picture_container">
                 <img src="pictures/7.jpg" class="picture" data-id="1"></img>
-                <img src="pictures/8.jpeg" class="picture" data-id="2"></img>
+                <img src="pictures/13.jpg" class="picture" data-id="2"></img>
+                <img src="pictures/14.jpg" class="picture" data-id="3"></img>
+                <img src="pictures/8.jpeg" class="picture" data-id="4"></img>
               </div>
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
               </div>
             </div>
-
             <div class="y_spacer_medium"></div>
             <div class="location">
               <img class="location_icon" src="/assets/location.svg"></img>
               <b class="location_text">Vilsbiburg / Landesentscheid</b>
             </div>
+            <div class="date">
+              <img class="date_icon" src="/assets/calendar.svg"></img>
+              <span class="date_text">1. - 3.4.2019</span>
+            </div>
             <div class="gallerie" data-current_id="1">
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
               </div>
               <div class="picture_container">
                 <img src="pictures/3.jpg" class="picture" data-id="1"></img>
@@ -79,25 +96,35 @@
                 <img src="pictures/6.png" class="picture" data-id="4"></img>
               </div>
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
               </div>
             </div>
-            <div class="news">
-              <img class="news_icon" src="/assets/share.svg"></img>
-              <a class="news_text" target="_blank" href="https://www.idowa.de/gallery.vilsbiburg-ueberraschende-konzepte-bei-jugend-forscht.78194094-a3b0-40f7-8b1d-e13d65c460de.html">Idowa</a>
-            </div>
-            <div class="news">
-              <img class="news_icon" src="/assets/share.svg"></img>
-              <a class="news_text" target="_blank" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/jugend-forscht-domspatzen-im-finale-21179-art1767967.html">Mittelbayerische</a>
+            <div class="news_container">
+              <div class="news">
+                <img class="news_icon" src="/assets/share.svg"></img>
+                <a class="news_text" target="_blank" href="https://www.idowa.de/gallery.vilsbiburg-ueberraschende-konzepte-bei-jugend-forscht.78194094-a3b0-40f7-8b1d-e13d65c460de.html">Idowa</a>
+              </div>
+              <div class="news">
+                <img class="news_icon" src="/assets/share.svg"></img>
+                <a class="news_text" target="_blank" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/jugend-forscht-domspatzen-im-finale-21179-art1767967.html">Mittelbayerische</a>
+              </div>
+              <div class="news">
+                <img class="news_icon" src="/assets/share.svg"></img>
+                <a class="news_text" target="_blank" href="https://www.youtube.com/watch?v=FhZ94-oB5o0">YouTube</a>
+              </div>
             </div>
             <div class="y_spacer_medium"></div>
             <div class="location">
               <img class="location_icon" src="/assets/location.svg"></img>
               <b class="location_text">München / Staatsempfang</b>
             </div>
+            <div class="date">
+              <img class="date_icon" src="/assets/calendar.svg"></img>
+              <span class="date_text">9.5.2019</span>
+            </div>
             <div class="gallerie" data-current_id="1">
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="back" src="/assets/arrow_back.svg"></img>
               </div>
               <div class="picture_container">
                 <img src="pictures/11.jpg" class="picture" data-id="1"></img>
@@ -105,18 +132,18 @@
                 <img src="pictures/12.jpeg" class="picture" data-id="3"></img>
               </div>
               <div class="gallerie_controll_container">
-                <img class="gallerie_controll" onclick="gallerie_controll_clicked()" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
+                <img class="gallerie_controll" data-controll-direction="forward" src="/assets/arrow_forward.svg"></img>
               </div>
             </div>
             <h3 id="upcoming_text">Upcoming:</h3>
             <div id="upcoming_container">
                 <div class="location">
                   <img class="location_icon" src="/assets/location.svg"></img>
-                  <b class="location_text">Chemnitz / Bundesentscheid</b>
+                  <a class="location_link" href="https://www.jugend-forscht.de/wettbewerbe/bundeswettbewerb-2019.html"><b class="location_text">Chemnitz / Bundesentscheid</b></a>
                 </div>
                 <div class="location">
                   <img class="location_icon" src="/assets/location.svg"></img>
-                  <a class="location_link" href="https://www.isc-hpc.com/" targe="_blank"><b class="location_text">ISC</b></a>
+                  <a class="location_link" href="https://2019.isc-program.com/presentation/?id=inv_sp135&sess=sess223" targe="_blank"><b class="location_text">ISC</b></a>
                 </div>
                 <div class="location">
                   <img class="location_icon" src="/assets/location.svg"></img>
@@ -167,6 +194,7 @@
             <li>Herrn Dr. Patrick Glauner für die Einladung, einen Vortrag bei der Krones AG zu halten</li>
             <li>Frau Dr. Katharina Schaar und den anderen Juroren des Fachbereichs Mathematik beim Landeswettbewerb Jugend Forscht für die vielen Verbesserungsvorschläge</li>
             <li>Herrn Dr. Andreas Neuzner (Physik Juror, Landeswettbewerb Jugend Forscht) für den Kontakt zum MPQ, an dem wir einen Vortrag halten dürfen</li>
+            <li>Stephan Ritter für die großartigen Tips für den Bundeswettbewerb</li>
             <li>Pfleiderer und Dräxlmaier</li>
           </ul>
         </div>
