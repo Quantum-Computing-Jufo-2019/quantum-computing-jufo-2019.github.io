@@ -20,6 +20,8 @@ function check_cookie_permission(){
       cancelButtonText: "Nein",
       showCancelButton: true,
       reverseButtons: true,
+      customClass: "cookie_alert",
+      customContainerClass: "cookie_alert_container",
     }).then((result) => {
       if (result.value) {
         setCookie("cookie_level","1",400);

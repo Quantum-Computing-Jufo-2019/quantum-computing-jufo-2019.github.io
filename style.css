@@ -2,6 +2,8 @@
   --green1: #C0CF3A;
   --green2: #8AB833;
   --green3: #549E39;
+  --red: #ea4335;
+  --blue: #b0d3b6;
 }
 html{
   overflow-y: visible;
@@ -38,10 +40,17 @@ h1 , h2 , h3 , h4 , h5{
 #main_headline{
   position: absolute;
   bottom: 50%;
-  width: 100%;
   font-family: "polya";
   font-size: -webkit-xxx-large;
   color: white;
+  vertical-align: middle;
+  margin: 0px 7px 0px 7px;
+}
+html.phone #main_headline{
+    margin: 0px 5% 0px 5%;
+}
+html.phone #main_headline{
+    font-size: 80px;
 }
 #second_section{
   width: 100%;
@@ -50,13 +59,17 @@ h1 , h2 , h3 , h4 , h5{
 }
 #scroll_button{
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   border-radius: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
 }
-#scroll_button:hover{
+html.mobile #scroll_button{
+    width: 200px;
+    height: 200px;
+}
+html:not(.mobile) #scroll_button:hover{
   background-color: lightgray;
 }
 .about_text{
@@ -67,7 +80,7 @@ h1 , h2 , h3 , h4 , h5{
     font-size: 26px;
 }
 #third_section{
-  background-color: rgb(190, 215, 239);
+  background-color: var(--green2);
 }
 #history_container{
   display: flex;
@@ -78,7 +91,7 @@ h1 , h2 , h3 , h4 , h5{
   margin: auto;
 }
 .y_spacer_medium{
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 .gallerie{
   width: 90%;
@@ -86,6 +99,7 @@ h1 , h2 , h3 , h4 , h5{
   flex-flow: row;
   flex-wrap: nowrap;
   margin: auto;
+  margin-bottom: 5px;
 }
 .gallerie_controll_container{
   width: 10%;
@@ -140,6 +154,9 @@ html.mobile .news_text{
 html.phone .date_text{
   font-size: x-large;
 }
+html.mobile .upcoming_text{
+  font-size: x-large;
+}
 #upcoming_text{
     margin-top: 15px;
     margin-bottom: 3px;
@@ -148,15 +165,23 @@ html.phone .date_text{
 #upcoming_container{
     margin: auto;
 }
+#upcoming_container .location{
+    margin: 0px auto 0px 0px;
+}
 .location_link{
     text-decoration: none
 }
 .location_text , .news_text , .date_text{
   vertical-align: super;
-  color: #ea4335;
+  color: white;
   text-decoration: none;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: x-large;
 }
 #fourth_section{
+    background-color: var(--blue);
+}
+#fifth_section{
   background-color: var(--green2);
   width: 100%;
   padding-bottom: 25px !important;
@@ -165,6 +190,8 @@ html.phone .date_text{
   font-family: "polya";
   margin: 0;
   padding: 20px;
+  color: black;
+  font-size: xx-large;
 }
 #downloads_table{
   margin: auto;
@@ -180,6 +207,8 @@ html.phone .date_text{
   margin: 0px;
   color: white;
   text-align: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 #downloads_flexbox{
   display: flex;
@@ -188,11 +217,15 @@ html.phone .date_text{
   margin-right: 10%;
   margin-left: 10%;
 }
-#fifth_section p, #fifth_section ul{
+html.phone #downloads_flexbox{
+    flex-flow: column;
+    flex-wrap: nowrap;
+}
+#fourth_section p, #fourth_section ul{
     margin-left: 5%;
     margin-right:5%;
 }
-#fifth_section li:not(:last-child){
+#fourth_section li:not(:last-child){
     margin-bottom: 3px;
 }
 #thanks_list li{
@@ -200,6 +233,7 @@ html.phone .date_text{
 }
 .download{
   margin: 5px;
+  padding: 5px;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -216,5 +250,25 @@ html.phone .date_text{
 }
 .download_text{
   text-align: center;
-  font-size: 20;
+  font-size: 20px;
+  margin: 4px 0 4px 0;
+}
+html.phone .download_text{
+    font-size: 50px;
+}
+html.phone .cookie_alert{
+    width: 100%;
+    height: 100%;
+}
+html.phone .cookie_alert .swal2-content{
+    font-size: 50px;
+}
+html.phone .cookie_alert .swal2-actions{
+    width: 100%;
+}
+html.phone .cookie_alert button{
+    width: 50%;
+}
+html.phone .cookie_alert_container{
+    padding: 0;
 }
