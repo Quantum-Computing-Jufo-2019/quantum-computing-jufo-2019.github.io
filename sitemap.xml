@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://domspatzen-quantum.de/</loc>
+  <lastmod>2020-01-02T10:00:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://domspatzen-quantum.de/downloads/dokumentation.pdf</loc>
+  <lastmod>2019-04-20T08:40:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://domspatzen-quantum.de/downloads/resultsbook.pdf</loc>
+  <lastmod>2019-04-20T10:51:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://domspatzen-quantum.de/downloads/bildschirmpr%C3%A4sentation.pptx</loc>
+  <lastmod>2019-04-20T10:24:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+</urlset>

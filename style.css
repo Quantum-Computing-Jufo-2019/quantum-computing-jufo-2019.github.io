@@ -25,12 +25,18 @@ h1 , h2 , h3 , h4 , h5{
 @font-face {
   font-family: polya;
   src: url("/assets/POLYA.woff2");
+  font-display: swap;
 }
 .section{
     width: 100%;
 }
-.section:not(#footer_section){
-    padding-bottom: 8px;
+.section:not(#footer_section):not(#first_section){
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+html.phone .section:not(#footer_section):not(#first_section){
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
 #first_section{
   width: 100%;
@@ -42,9 +48,16 @@ h1 , h2 , h3 , h4 , h5{
   bottom: 50%;
   font-family: "polya";
   font-size: -webkit-xxx-large;
-  color: white;
+  color: black;
   vertical-align: middle;
-  margin: 0px 7px 0px 7px;
+  margin: 0px;
+  transform: translateY(50%);
+}
+html.phone #main_headline{
+    transform: translateY(50%) translateY(-50px);
+}
+html:not(.phone) #main_headline{
+    width: 100%;
 }
 html.phone #main_headline{
     margin: 0px 5% 0px 5%;
@@ -54,7 +67,6 @@ html.phone #main_headline{
 }
 #second_section{
   width: 100%;
-  min-height: 100%;
   background-color: white;
 }
 #scroll_button{
@@ -65,7 +77,7 @@ html.phone #main_headline{
   transform: translateX(-50%);
   background-color: white;
 }
-html.mobile #scroll_button{
+html.phone #scroll_button{
     width: 200px;
     height: 200px;
 }
@@ -91,7 +103,7 @@ html:not(.mobile) #scroll_button:hover{
   margin: auto;
 }
 .y_spacer_medium{
-  margin-bottom: 35px;
+  margin-bottom: 50px;
 }
 .gallerie{
   width: 90%;
@@ -114,8 +126,14 @@ html:not(.mobile) #scroll_button:hover{
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  overflow-x: hidden;
   width: 80%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.picture_container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 .picture{
   height: 400px;
@@ -141,18 +159,62 @@ html.zoom #zoom_blur_background{
   z-index: 2000;
   opacity: 0.9;
 }
-.location , .news, .date{
+html.zoom #zoomed_image_source{
+    display: block;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#zoomed_image_source{
+    display: none;
+    z-index: 2002;
+    color: white;
+}
+.location, .news, .date{
   width: fit-content;
   margin: auto;
 }
+html:not(.phone) .location{
+    display: flex;
+}
+html:not(.phone) .date{
+    display: flex;
+}
+html.phone .location{
+    width: 100%;
+    margin: 0px;
+}
+html.phone .date{
+    width: 100%;
+    margin: 0px;
+}
+.location_text{
+    margin: 0px;
+}
+html.phone .news{
+    width: 100%;
+    text-align: center;
+}
+html.phone .news_container{
+    width: 100%;
+}
 html.mobile .location_text{
   font-size: xx-large;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+html.phone .location_icon , html.phone .news_icon , html.phone .date_icon{
+    display: none;
 }
 html.mobile .news_text{
   font-size: x-large;
 }
 html.phone .date_text{
   font-size: x-large;
+  width: 100%;
+  text-align: center
 }
 html.mobile .upcoming_text{
   font-size: x-large;
@@ -181,6 +243,9 @@ html.mobile .upcoming_text{
 #fourth_section{
     background-color: var(--blue);
 }
+html.phone #fourth_section{
+    background-color: white;
+}
 #fifth_section{
   background-color: var(--green2);
   width: 100%;
@@ -200,15 +265,21 @@ html.mobile .upcoming_text{
 #footer_section{
   width: 100%;
   background-color: var(--green3);
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+html.phone #footer_section{
+    padding-top: 3%;
+    padding-bottom: 2%;
 }
 .footer_text{
   margin: 0px;
+  margin-bottom: 4px;
   color: white;
   text-align: center;
   padding-left: 6px;
   padding-right: 6px;
+  font-size: x-large;
 }
 #downloads_flexbox{
   display: flex;
@@ -230,6 +301,7 @@ html.phone #downloads_flexbox{
 }
 #thanks_list li{
   font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: x-large;
 }
 .download{
   margin: 5px;
@@ -241,6 +313,10 @@ html.phone #downloads_flexbox{
   border-radius: 7px;
   flex-grow: 200;
   flex-shrink: 0;
+}
+.download_a{
+  color: black;
+  text-decoration: none;
 }
 .download_icon{
   width: 50px;
@@ -271,4 +347,65 @@ html.phone .cookie_alert button{
 }
 html.phone .cookie_alert_container{
     padding: 0;
+}
+#cookie_alert{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: white;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 3000;
+}
+html.mobile #cookie_alert{
+    width: 100%;
+    height: 40%;
+}
+#cookie_alert_headline{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: xx-large;
+}
+html.phone #cookie_alert_headline{
+}
+.cookie_alert_button{
+    background-color: white;
+    border-radius: 0px;
+    border: 2px solid gray;
+    width: 50%;
+    height: 40px;
+}
+.cookie_alert_button:first-child{
+    background-color: var(--green2);
+    font-weight: bold;
+}
+html.phone .cookie_alert_button{
+    width: 90%;
+    height: 100px;
+    font-size: xx-large;
+    border: 5px solid gray;
+}
+html:not(.phone) .cookie_alert_button:not(:last-child){
+    margin-right: 10px;
+}
+html.phone .cookie_alert_button{
+    margin-bottom: 10px;
+}
+html:not(.mobile) .cookie_alert_button:hover{
+    background-color: gray;
+}
+#cookie_alert_button_conatainer{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+html.phone #cookie_alert_button_conatainer{
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }

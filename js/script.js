@@ -12,7 +12,7 @@ function run_google_analytics(){
 }
 function check_cookie_permission(){
   if(getCookie("cookie_level") == ""){
-    Swal.fire({
+    /*Swal.fire({
       type: "question",
       title: "Cookie Präferenzen",
       text: "Darf diese Website Cookies verwenden?",
@@ -26,13 +26,22 @@ function check_cookie_permission(){
       if (result.value) {
         setCookie("cookie_level","1",400);
       }
-    });
+    });*/
+    $("#cookie_alert").show();
   }else{
     cookies_accepted();
   }
 }
 function cookies_accepted(){
   run_google_analytics();
+}
+function accept_cookies(){
+    setCookie("cookie_level","1",400);
+    cookies_accepted();
+    $("#cookie_alert").hide();
+}
+function decline_cookies(){
+    $("#cookie_alert").hide();
 }
 function setClassState(condition,element,class_name){
   if(condition){
@@ -116,7 +125,6 @@ function zoomPicture(picture){
 
   function setToOrgiginalPos(){
     return new Promise(function(resolve, reject) {
-      console.log("1");
       $("#zoomed_image").attr("src",src);
       $("#zoomed_image").offset(pos);
       $("#zoomed_image").css("width",width);
@@ -128,7 +136,6 @@ function zoomPicture(picture){
   }
   function centerImagePX(){
     return new Promise(function(resolve, reject) {
-      console.log("2");
       $("#zoomed_image").animate({
         top: ($("html").height() - $("#zoomed_image").height())/2+"px",
         left: ($("html").width() - $("#zoomed_image").width())/2+"px",
@@ -139,7 +146,6 @@ function zoomPicture(picture){
   }
   function centerImagePC(){
     return new Promise(function(resolve, reject) {
-      console.log("3");
       $("#zoomed_image").css({
         top: "50%",
         left: "50%",
@@ -150,7 +156,6 @@ function zoomPicture(picture){
   }
   function extendPX(){
     return new Promise(function(resolve, reject) {
-      console.log("4");
       $("#zoomed_image").css("width","");
       $("#zoomed_image").css("height","");
       $("#zoomed_image").animate({
@@ -163,8 +168,6 @@ function zoomPicture(picture){
   }
   function extendPC(){
     return new Promise(function(resolve, reject) {
-      console.log("5");
-      console.log("baum");
       $("#zoomed_image")[0].style.maxWidth = "";
       $("#zoomed_image")[0].style.maxWidth = "100%";
       $("#zoomed_image")[0].style.maxHeight = "";
@@ -173,8 +176,20 @@ function zoomPicture(picture){
       resolve();
     });
   }
+  function setSource(){
+      return new Promise(function(resolve, reject) {
+          let source = $(picture).attr("data-source");
+          if(source){
+            $("#zoomed_image_source").text("Quelle: "+source);
+          }else{
+              $("#zoomed_image_source").text("");
+          }
+         resolve(); 
+      });
+  }
 
-  setToOrgiginalPos()
+  setSource()
+  .then(setToOrgiginalPos)
   .then(centerImagePX)
   .then(centerImagePC)
   .then(extendPX)
