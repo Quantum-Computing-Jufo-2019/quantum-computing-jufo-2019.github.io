@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push: 
     branches:   
-      - master
+      - dev
 
 jobs:
   deploy:
@@ -16,8 +16,8 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.5
       with:
-        BRANCH: deploy
+        BRANCH: master
         FOLDER: src/
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: master
+        BASE_BRANCH: dev
         SINGLE_COMMIT: true
