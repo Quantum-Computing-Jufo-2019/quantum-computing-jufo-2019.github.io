@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.5
       with:
@@ -16,3 +20,4 @@ jobs:
         FOLDER: src/
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: master
+        SINGLE_COMMIT: true
