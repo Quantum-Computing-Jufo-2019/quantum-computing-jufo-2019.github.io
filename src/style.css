@@ -221,7 +221,7 @@ html.mobile .upcoming_text{
 }
 .tweetContainer {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 #upcoming_text{
     margin-top: 15px;
