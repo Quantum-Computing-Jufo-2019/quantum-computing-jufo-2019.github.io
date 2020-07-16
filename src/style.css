@@ -219,6 +219,10 @@ html.phone .date_text{
 html.mobile .upcoming_text{
   font-size: x-large;
 }
+.tweetContainer {
+  display: flex;
+  align-items: center;
+}
 #upcoming_text{
     margin-top: 15px;
     margin-bottom: 3px;
