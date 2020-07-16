@@ -2,46 +2,6 @@ function onload(){
   md = new MobileDetect(window.navigator.userAgent);
   checkDeviceType();
   initGalleries();
-  check_cookie_permission();
-}
-function run_google_analytics(){
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-139965444-1');
-}
-function check_cookie_permission(){
-  if(getCookie("cookie_level") == ""){
-    /*Swal.fire({
-      type: "question",
-      title: "Cookie Präferenzen",
-      text: "Darf diese Website Cookies verwenden?",
-      confirmButtonText: "Ja",
-      cancelButtonText: "Nein",
-      showCancelButton: true,
-      reverseButtons: true,
-      customClass: "cookie_alert",
-      customContainerClass: "cookie_alert_container",
-    }).then((result) => {
-      if (result.value) {
-        setCookie("cookie_level","1",400);
-      }
-    });*/
-    $("#cookie_alert").show();
-  }else{
-    cookies_accepted();
-  }
-}
-function cookies_accepted(){
-  run_google_analytics();
-}
-function accept_cookies(){
-    setCookie("cookie_level","1",400);
-    cookies_accepted();
-    $("#cookie_alert").hide();
-}
-function decline_cookies(){
-    $("#cookie_alert").hide();
 }
 function setClassState(condition,element,class_name){
   if(condition){
@@ -49,13 +9,6 @@ function setClassState(condition,element,class_name){
   }else{
     element.classList.remove(class_name);
   }
-}
-function checkDeviceType(){
-  html = document.getElementsByTagName("html")[0];
-
-  setClassState(md.mobile(),html,"mobile");
-  setClassState(md.phone(),html,"phone");
-  setClassState(md.tablet(),html,"tablet")
 }
 function initGalleries(){
   $(".picture").bind("click",function(){
@@ -184,7 +137,7 @@ function zoomPicture(picture){
           }else{
               $("#zoomed_image_source").text("");
           }
-         resolve(); 
+         resolve();
       });
   }
 
@@ -200,25 +153,4 @@ function closeZoom(){
   $("#zoomed_image").hide();
   $("#zoomed_image").removeAttr("style");
   $("#zoomed_image").removeAttr("src");
-}
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }

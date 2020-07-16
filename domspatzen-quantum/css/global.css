@@ -21,6 +21,6 @@ h1 , h2 , h3 , h4 , h5{
 }
 @font-face {
 	font-family: polya;
-	src: url("/assets/POLYA.woff2");
+	src: url("/fonts/POLYA.woff2");
 	font-display: swap;
 }

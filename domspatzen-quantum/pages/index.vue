@@ -36,7 +36,16 @@ export default {
 		Section5,
 		FooterSection,
 		SelectionsContainer,
-  }
+  },
+	methods: {
+		checkDeviceType: function(){
+		  html = document.getElementsByTagName("html")[0];
+
+		  setClassState(md.mobile(),html,"mobile");
+		  setClassState(md.phone(),html,"phone");
+		  setClassState(md.tablet(),html,"tablet")
+		},
+	}
 }
 </script>
 

@@ -2,11 +2,65 @@
 	<div id="cookie_alert">
 			<p id="cookie_alert_headline">Darf diese Website Cookies verwenden?</p>
 			<div id="cookie_alert_button_conatainer">
-					<button class="cookie_alert_button" onclick="accept_cookies()">Ja</button>
-					<button class="cookie_alert_button" onclick="decline_cookies()">Nein</button>
+					<button class="cookie_alert_button" v-on:click="accept_cookies()">Ja</button>
+					<button class="cookie_alert_button" v-on:click="decline_cookies()">Nein</button>
 			</div>
 	</div>
 </template>
+<script>
+	export default {
+		mounted: function() {
+			this.check_cookie_permission();
+		},
+		methods: {
+			run_google_analytics: function(){
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-139965444-1');
+			},
+			check_cookie_permission: function(){
+				if(this.getCookie("cookie_level") == ""){
+					$("#cookie_alert").show();
+				}else{
+					this.cookies_accepted();
+				}
+			},
+			cookies_accepted: function(){
+				this.run_google_analytics();
+			},
+			accept_cookies: function(){
+					this.setCookie("cookie_level","1",400);
+					this.cookies_accepted();
+					$("#cookie_alert").hide();
+			},
+			decline_cookies: function(){
+					$("#cookie_alert").hide();
+			},
+			getCookie: function(cname) {
+				var name = cname + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				var ca = decodedCookie.split(';');
+				for(var i = 0; i <ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			},
+			setCookie: function(cname, cvalue, exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				var expires = "expires="+ d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			},
+		},
+	};
+</script>
 <style>
 	#cookie_alert{
 			display: none;
