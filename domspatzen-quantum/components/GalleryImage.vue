@@ -1,5 +1,13 @@
 <template>
-	<img loading="lazy" v-bind:src="'pictures/' + src" v-bind:alt="alt" class="picture" v-bind:data-id="id" v-bind:data-source="source">
+	<img
+		loading="lazy"
+		v-bind:src="'pictures/' + src"
+		v-bind:alt="alt"
+		class="picture"
+		v-bind:data-id="id"
+		v-bind:data-source="source"
+		v-on:click="$parent.$emit('fullscreenPicture', id)"
+	>
 </template>
 <script>
 	export default {

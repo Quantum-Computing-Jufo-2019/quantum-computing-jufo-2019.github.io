@@ -6,7 +6,9 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+			{ name: 'google-site-verification', content: '3muh7ZlUCWcxNvUuz4IPU5eLGjajeADIIrfic64nLLY' },
+			{ name: 'Description', content: 'Informationen und Bilder zum Jugend Forscht Projekt über das Lösen von Optimierungsproblemen auf einem adiabatischen Quantencomputer. Von Paul Schappert, Jakov D. Wallbrecher und Jonathan Treffler' },
+      { hid: 'description', name: 'description', content: 'Quantencomputer Jugend Forscht' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -14,6 +16,22 @@ export default {
 		script: [
 				{
 					src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+					type: "text/javascript"
+				},
+				{
+					src: "https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js",
+					type: "text/javascript"
+				},
+				{
+					src: "https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js",
+					type: "text/javascript"
+				},
+				{
+					src: "https://cdn.jsdelivr.net/npm/sweetalert2@8",
+					type: "text/javascript"
+				},
+				{
+					src: "https://www.googletagmanager.com/gtag/js?id=UA-139965444-1",
 					type: "text/javascript"
 				},
 		],
