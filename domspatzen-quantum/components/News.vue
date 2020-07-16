@@ -10,5 +10,28 @@
 	}
 </script>
 <style>
-
+	.news {
+		width: fit-content;
+		margin: auto;
+	}
+	.news_text {
+		vertical-align: super;
+		color: white;
+		text-decoration: none;
+		font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+		font-size: x-large;
+	}
+	html.phone .news_container {
+			width: 100%;
+	}
+	html.phone .news {
+			width: 100%;
+			text-align: center;
+	}
+	html.phone .news_icon {
+			display: none;
+	}
+	html.mobile .news_text{
+		font-size: x-large;
+	}
 </style>
