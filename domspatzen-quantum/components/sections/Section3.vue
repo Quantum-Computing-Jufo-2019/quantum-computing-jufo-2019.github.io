@@ -9,7 +9,9 @@
 				<galleryImage id="2" src="1.jpeg" alt="Teamfoto vor unserem Stand"></galleryImage>
 				<galleryImage id="3" src="2.jpg" alt="Teamfoto vor unserer Überlegungstafel"></galleryImage>
 			</gallery>
-			<news content="Mittelbayerische" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/domspatzen-gewinnen-bei-jugend-forscht-21179-art1752772.html"></news>
+			<news-container>
+				<news content="Mittelbayerische" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/domspatzen-gewinnen-bei-jugend-forscht-21179-art1752772.html"></news>
+			</news-container>
 			<spacer></spacer>
 			<location content="Neutraubling / Vortrag bei der Krones AG"></location>
 			<date content="25.3.2019"></date>
@@ -28,11 +30,11 @@
 				<galleryImage src="5.jpg" alt="Besuch vom Kultusminister an unserem Stand" id="3"></galleryImage>
 				<galleryImage src="6.png" alt="Preisverleihung" id="4"></galleryImage>
 			</gallery>
-			<div class="news_container">
+			<news-container>
 				<news content="Idowa" href="https://www.idowa.de/gallery.vilsbiburg-ueberraschende-konzepte-bei-jugend-forscht.78194094-a3b0-40f7-8b1d-e13d65c460de.html"></news>
 				<news content="Mittelbayerische" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/jugend-forscht-domspatzen-im-finale-21179-art1767967.html"></news>
 				<news content="YouTube" href="https://www.youtube.com/watch?v=FhZ94-oB5o0"></news>
-			</div>
+			</news-container>
 			<spacer></spacer>
 			<location content="München / Staatsempfang"></location>
 			<date content="9.5.2019"></date>
@@ -51,7 +53,9 @@
 				<galleryImage src="18.jpg" alt="Bühne der Preisverleihung" id="4" data-source="Fraunhofer IWU"></galleryImage>
 				<galleryImage src="20.jpg" alt="Kuchen nach der Preisverleihung" id="5" data-source="Fraunhofer IWU"></galleryImage>
 			</gallery>
-			<news content="Domspatzen" href="https://www.domspatzen.de/gymnasium/aktuelles/detail/article/eine-schule-mit-den-faechern-musik-forschen-und-reisen.html"></news>
+			<news-container>
+				<news content="Domspatzen" href="https://www.domspatzen.de/gymnasium/aktuelles/detail/article/eine-schule-mit-den-faechern-musik-forschen-und-reisen.html"></news>
+			</news-container>
 			<spacer></spacer>
 
 			<location content="ISC 2019"></location>
@@ -61,7 +65,9 @@
 				<galleryImage src="22.jpg" alt="Teamfoto vo unseren Plakaten am ISC" id="2"></galleryImage>
 				<galleryImage src="23.png" alt="während des Vortrags" id="3"></galleryImage>
 			</gallery>
-			<news content="YouTube (Aufzeichnung)" href="https://www.youtube.com/watch?v=aM_pAA9FdYY"></news>
+			<news-container>
+				<news content="YouTube (Aufzeichnung)" href="https://www.youtube.com/watch?v=aM_pAA9FdYY"></news>
+			</news-container>
 			<spacer></spacer>
 
 			<location content="36C3 (Chaos Zone)"></location>
@@ -73,6 +79,7 @@
 	import Location from '~/components/Location.vue';
 	import Date from '~/components/Date.vue';
 	import News from '~/components/News.vue';
+	import NewsContainer from '~/components/NewsContainer.vue';
 	import Gallery from '~/components/Gallery.vue'
 	import GalleryImage from '~/components/GalleryImage.vue'
 	import Spacer from '~/components/Spacer.vue'
@@ -83,6 +90,7 @@
 			Location,
 			Date,
 			News,
+			NewsContainer,
 			Gallery,
 			GalleryImage,
 			Spacer,
@@ -90,3 +98,13 @@
 		},
 	};
 </script>
+<style>
+	#third_section{
+		background-color: var(--green2);
+	}
+	#history_container{
+		display: flex;
+		flex-flow: column;
+		flex-wrap: nowrap;
+	}
+</style>
