@@ -57,6 +57,7 @@
 				function activateBlurBackground(thisEl) {
 					return new Promise(function(resolve, reject) {
 						let zoomBlurBackground = $(thisEl).find(".zoom_blur_background");
+						zoomBlurBackground.show();
 						zoomBlurBackground.animate({
 							opacity: 0.8,
 						});
@@ -159,6 +160,7 @@
 					opacity: 0,
 				}, function() {
 					$(self.$el).removeClass("zoom");
+					zoomBlurBackground.hide();
 				});
 
 				zoomedImage.hide();

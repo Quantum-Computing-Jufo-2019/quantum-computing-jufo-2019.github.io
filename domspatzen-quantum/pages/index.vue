@@ -36,12 +36,23 @@ export default {
   },
 	methods: {
 		checkDeviceType: function(){
-		  html = document.getElementsByTagName("html")[0];
+			let md = new MobileDetect(window.navigator.userAgent);
+		  let html = document.getElementsByTagName("html")[0];
 
-		  setClassState(md.mobile(),html,"mobile");
-		  setClassState(md.phone(),html,"phone");
-		  setClassState(md.tablet(),html,"tablet")
+		  this.setClassState(md.mobile(),html,"mobile");
+		  this.setClassState(md.phone(),html,"phone");
+		  this.setClassState(md.tablet(),html,"tablet")
 		},
+		setClassState: function(condition,element,class_name){
+		  if(condition){
+		    element.classList.add(class_name);
+		  }else{
+		    element.classList.remove(class_name);
+		  }
+		}
+	},
+	mounted: function() {
+		this.checkDeviceType();
 	}
 }
 </script>
