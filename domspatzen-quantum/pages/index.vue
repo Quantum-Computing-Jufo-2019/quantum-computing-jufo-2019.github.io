@@ -43,7 +43,7 @@ export default {
 		  this.setClassState(md.phone(),html,"phone");
 		  this.setClassState(md.tablet(),html,"tablet")
 		},
-		setClassState: function(condition,element,class_name){
+		setClassState: function(condition, element, class_name){
 		  if(condition){
 		    element.classList.add(class_name);
 		  }else{
