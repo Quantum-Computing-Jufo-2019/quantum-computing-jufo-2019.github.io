@@ -22,8 +22,8 @@
 		props: [],
 		data: function() {
 			return {
-				currentJpgSrc: " ",
-				currentWebpSrc: " ",
+				currentJpgSrc: "",
+				currentWebpSrc: "",
 				activeId: 1,
 			}
 		},
@@ -169,8 +169,8 @@
 
 				zoomedImage.hide();
 				zoomedImage.removeAttr("style");
-				this.currentWebpSrc = " ";
-				this.currentJpgSrc = " ";
+				this.currentWebpSrc = "";
+				this.currentJpgSrc = "";
 			},
 		},
 	}
