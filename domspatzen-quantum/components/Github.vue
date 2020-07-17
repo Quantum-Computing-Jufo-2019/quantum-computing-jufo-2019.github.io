@@ -1,7 +1,11 @@
 <template>
 	<div class="download">
 		<a class="download_a" v-bind:href="href" target="_blank" rel="noreferrer">
-			<img class="download_icon" alt="Download" src="~/assets/github.png">
+			<picture>
+				<source :srcSet="require('~/assets/github.png?webp')" type="image/webp" />
+				<source :srcSet="require('~/assets/github.png?original')" type="image/png" />
+				<img class="download_icon" alt="Download" :src="require('~/assets/github.png?lqip')">
+			</picture>
 			<p class="download_text">{{ content }}</p>
 		</a>
 	</div>
