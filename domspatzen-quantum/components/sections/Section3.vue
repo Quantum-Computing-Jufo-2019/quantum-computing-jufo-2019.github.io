@@ -68,10 +68,22 @@
 			<news-container>
 				<news content="YouTube (Aufzeichnung)" href="https://www.youtube.com/watch?v=aM_pAA9FdYY"></news>
 			</news-container>
+			<div class="tweetContainer">
+				<blockquote class="twitter-tweet"><p lang="en" dir="ltr">3 members of the Regensburger Domspatzen (13, 14, 15) show the professionals at <a href="https://twitter.com/isc19?ref_src=twsrc%5Etfw">@ISC19</a> how to solve the n-queens, the knights tour, the 4x4 sudoku, and the n-amazons problem on <a href="https://twitter.com/dwavesys?ref_src=twsrc%5Etfw">@dwavesys</a>. Chapeau! (credits to Kristel Michielsen from <a href="https://twitter.com/fzj_jsc?ref_src=twsrc%5Etfw">@fzj_jsc</a> for consulting.) <a href="https://twitter.com/DomspatzenRgbg?ref_src=twsrc%5Etfw">@DomspatzenRgbg</a> <a href="https://t.co/9QEmIAR2Mb">pic.twitter.com/9QEmIAR2Mb</a></p>&mdash; Thomas Lippert (@Tomtherhymer) <a href="https://twitter.com/Tomtherhymer/status/1141280921238331392?ref_src=twsrc%5Etfw">June 19, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
 			<spacer></spacer>
 
 			<location content="36C3 (Chaos Zone)"></location>
 			<date content="29.12.2019 19:00"></date>
+			<gallery>
+				<galleryImage src="26.JPG" alt="Rakete" id="1" data-source="Freddy2001 from Wikimedia Commons"></galleryImage>
+				<galleryImage src="27.jpg" alt="Rakete mit uns" id="2"></galleryImage>
+				<galleryImage src="24.jpg" alt="CCC RGB Einhorn" id="3"></galleryImage>
+				<galleryImage src="25.jpg" alt="CCC Chaos Zone" id="4"></galleryImage>
+				<galleryImage src="28.jpeg" alt="Löten" id="5"></galleryImage>
+				<galleryImage src="29.jpeg" alt="Chaos Zone Gruppenbild" id="6"></galleryImage>
+				<galleryImage src="30.jpeg" alt="Vortrag Plakat CCC Design" id="7"></galleryImage>
+      </gallery>
 		</div>
 	</div>
 </template>
@@ -106,5 +118,9 @@
 		display: flex;
 		flex-flow: column;
 		flex-wrap: nowrap;
+	}
+	.tweetContainer {
+	  display: flex;
+	  justify-content: center;
 	}
 </style>
