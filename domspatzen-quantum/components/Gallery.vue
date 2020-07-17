@@ -1,9 +1,9 @@
 <template>
 	<div class="gallery">
 		<div class="zoom_blur_background" v-on:click="closeZoom"></div>
-		<picture class="zoomed_image" v-on:click="closeZoom">
+		<picture v-on:click="closeZoom">
 			<source :srcset="currentWebpSrc" type="image/webp" />
-			<img :src="currentJpgSrc" type="image/jpg" />
+			<img class="zoomed_image" :src="currentJpgSrc" type="image/jpg" />
 		</picture>
 		<span class="zoomed_image_source"></span>
 		<div class="gallery_control_container">
@@ -234,9 +234,5 @@
 	.zoomed_image {
 		position: fixed;
 		z-index: 2002;
-	}
-	.zoomed_image img {
-		width: 100%;
-  	height: 100%;
 	}
 </style>
