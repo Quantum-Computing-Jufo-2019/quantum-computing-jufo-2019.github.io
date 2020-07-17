@@ -1,0 +1,26 @@
+body, #__nuxt, #__layout {
+	width: 100%;
+	height: 100%;
+}
+html{
+	overflow-y: visible;
+}
+body, html {
+	height: 100%;
+}
+body {
+	background-color: white;
+	border: none;
+	margin: 0;
+}
+p{
+	font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+h1 , h2 , h3 , h4 , h5{
+	text-align: center;
+}
+@font-face {
+	font-family: polya;
+	src: url("/fonts/POLYA.woff2");
+	font-display: swap;
+}
