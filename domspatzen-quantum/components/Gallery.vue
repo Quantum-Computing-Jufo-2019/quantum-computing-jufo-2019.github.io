@@ -89,7 +89,7 @@
 			      zoomedImage.animate({
 			        "max-width": $("html").width()+"px",
 			        "max-height": $("html").height()+"px",
-			      },function(){
+			      }, "linear", function(){
 			        resolve();
 			      });
 			    });
@@ -103,19 +103,20 @@
 			      resolve();
 			    });
 			  }
-			  function setSource(){
+			  function setSource(thisEl, picture){
 			      return new Promise(function(resolve, reject) {
 			          let source = $(picture).attr("data-source");
+								console.log(picture, source);
 			          if(source){
-			            $("#zoomed_image_source").text("Quelle: "+source);
+									$(thisEl).find(".zoomed_image_source").text("Quelle: "+source);
 			          }else{
-			              $("#zoomed_image_source").text("");
+			            $(thisEl).find(".zoomed_image_source").text("");
 			          }
 			         resolve();
 			      });
 			  }
 
-			  setSource()
+			  setSource(this.$el, picture)
 			  .then(setToOrgiginalPos(pos, src, width, height))
 				.then(activateBlurBackground(this.$el))
 			  .then(centerImagePX)
@@ -131,7 +132,7 @@
 		},
 		methods: {
 			scroll: function(direction){
-			  let picture_container = $(this.$el).children()[1];
+			  let picture_container = $(this.$el).find(".picture_container")[0];;
 			  let pictures = picture_container.childNodes;
 
 			  let new_current_id = this.activeId + direction;
@@ -150,14 +151,16 @@
 			  }
 			},
 			closeZoom: function() {
+				var zoomedImage = $(this.$el).find(".zoomed_image");
+				let zoomBlurBackground = $(this.$el).find(".zoom_blur_background");
+
 				let self = this;
-				var zoomedImage = $(self.$el).find(".zoomed_image");
-				let zoomBlurBackground = $(self.$el).find(".zoom_blur_background");
 				zoomBlurBackground.animate({
 					opacity: 0,
 				}, function() {
 					$(self.$el).removeClass("zoom");
 				});
+
 				zoomedImage.hide();
 				zoomedImage.removeAttr("style");
 				zoomedImage.removeAttr("src");
