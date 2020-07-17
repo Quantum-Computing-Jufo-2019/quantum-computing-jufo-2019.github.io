@@ -1,5 +1,8 @@
 <template>
 	<div class="gallery">
+		<div class="zoom_blur_background" v-on:click="closeZoom"></div>
+		<img class="zoomed_image" alt="" v-on:click="closeZoom">
+		<span class="zoomed_image_source"></span>
 		<div class="gallery_control_container">
 			<img class="gallery_control" alt="" v-on:click="scroll(-1)" src="~/assets/arrow_back.svg">
 		</div>
@@ -15,8 +18,110 @@
 	export default {
 		props: [],
 		mounted: function() {
-			this.$on('fullscreenPicture', function (id) {
-				console.log('fullscreenPicture', id);
+			this.$on('zoomPicture', function (id) {
+				var picture;
+				var picture_container = $(this.$el).find(".picture_container")[0];
+				console.log(picture_container);
+				var pictures = picture_container.childNodes;
+
+				for(let i= 0; i < pictures.length; i++){
+					if($(pictures[i]).attr("data-id") == id){
+						picture = pictures[i];
+					}
+				}
+
+			  $(this.$el).addClass("zoom");
+
+			  var pos = $(picture).offset();
+			  var src = $(picture).attr("src");
+			  var height = $(picture).height();
+			  var width = $(picture).width();
+
+				console.log(src);
+
+				var zoomedImage = $(this.$el).find(".zoomed_image");
+				zoomedImage.show();
+
+			  function setToOrgiginalPos(pos, src, width, height){
+			    return new Promise(function(resolve, reject) {
+						console.log(pos);
+			      zoomedImage.attr("src", src);
+			      zoomedImage.offset(pos);
+			      zoomedImage.css("width",width);
+			      zoomedImage.css("height",height);
+			      zoomedImage.css("max-width",width);
+			      zoomedImage.css("max-height",height);
+			      resolve();
+			    });
+			  }
+				function activateBlurBackground(thisEl) {
+					return new Promise(function(resolve, reject) {
+						let zoomBlurBackground = $(thisEl).find(".zoom_blur_background");
+						zoomBlurBackground.animate({
+							opacity: 0.8,
+						});
+					});
+				}
+			  function centerImagePX(){
+			    return new Promise(function(resolve, reject) {
+			      zoomedImage.animate({
+			        top: ($("html").height() - zoomedImage.height())/2+"px",
+			        left: ($("html").width() - zoomedImage.width())/2+"px",
+			      },function(){
+			        resolve();
+			      });
+			    });
+			  }
+			  function centerImagePC(){
+			    return new Promise(function(resolve, reject) {
+			      zoomedImage.css({
+			        top: "50%",
+			        left: "50%",
+			        transform: "translate(-50%, -50%)",
+			      });
+			      resolve();
+			    });
+			  }
+			  function extendPX(){
+			    return new Promise(function(resolve, reject) {
+			      zoomedImage.css("width","");
+			      zoomedImage.css("height","");
+			      zoomedImage.animate({
+			        "max-width": $("html").width()+"px",
+			        "max-height": $("html").height()+"px",
+			      },function(){
+			        resolve();
+			      });
+			    });
+			  }
+			  function extendPC(){
+			    return new Promise(function(resolve, reject) {
+			      zoomedImage[0].style.maxWidth = "";
+			      zoomedImage[0].style.maxWidth = "100%";
+			      zoomedImage[0].style.maxHeight = "";
+			      zoomedImage[0].style.maxHeight = "100%";
+			      resolve();
+			    });
+			  }
+			  function setSource(){
+			      return new Promise(function(resolve, reject) {
+			          let source = $(picture).attr("data-source");
+			          if(source){
+			            $("#zoomed_image_source").text("Quelle: "+source);
+			          }else{
+			              $("#zoomed_image_source").text("");
+			          }
+			         resolve();
+			      });
+			  }
+
+			  setSource()
+			  .then(setToOrgiginalPos(pos, src, width, height))
+				.then(activateBlurBackground(this.$el))
+			  .then(centerImagePX)
+			  .then(centerImagePC)
+			  .then(extendPX)
+			  .then(extendPC);
 			});
 		},
 		data: function() {
@@ -43,12 +148,25 @@
 			    $(picture_container).scrollTo(new_current_picture,500,{offset: offset});
 					this.activeId = new_current_id;
 			  }
-			}
+			},
+			closeZoom: function() {
+				let self = this;
+				var zoomedImage = $(self.$el).find(".zoomed_image");
+				let zoomBlurBackground = $(self.$el).find(".zoom_blur_background");
+				zoomBlurBackground.animate({
+					opacity: 0,
+				}, function() {
+					$(self.$el).removeClass("zoom");
+				});
+				zoomedImage.hide();
+				zoomedImage.removeAttr("style");
+				zoomedImage.removeAttr("src");
+			},
 		},
 	}
 </script>
 <style>
-	.gallery{
+	.gallery {
 		width: 90%;
 		display: flex;
 		flex-flow: row;
@@ -77,5 +195,34 @@
 	.picture_container::-webkit-scrollbar {
 			width: 0;
 			height: 0;
+	}
+	.zoom_blur_background {
+		background-color: black;
+		z-index: -1;
+		top: 0px;
+		left: 0px;
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	.gallery.zoom .zoom_blur_background{
+		z-index: 2000;
+	}
+	.gallery.zoom .zoomed_image_source{
+	    display: block;
+	    position: fixed;
+	    bottom: 15px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	}
+	.zoomed_image_source{
+	    display: none;
+	    z-index: 2002;
+	    color: white;
+	}
+	.zoomed_image {
+		position: fixed;
+		z-index: 2002;
 	}
 </style>

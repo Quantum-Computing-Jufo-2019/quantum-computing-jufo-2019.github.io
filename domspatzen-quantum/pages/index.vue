@@ -1,9 +1,6 @@
 <template>
 	<div style="width: 100%; height: 100%;">
-		<div id="zoom_blur_background" onclick="closeZoom();"></div>
-		<img id="zoomed_image" alt="" onclick="closeZoom();">
 		<cookie-alert />
-		<span id="zoomed_image_source"></span>
 		<selections-container>
 			<section1 />
 			<section2 />
@@ -67,31 +64,5 @@ export default {
 	html.phone .section:not(#footer_section):not(#first_section){
 	    padding-bottom: 5%;
 	    padding-top: 2%;
-	}
-	#zoom_blur_background{
-	  display: none;
-	  opacity: 0;
-	  transition: opacity 2s;
-	}
-	html.zoom #zoom_blur_background{
-	  display: block;
-	  background-color: black;
-	  position: fixed;
-	  width: 100%;
-	  height: 100%;
-	  z-index: 2000;
-	  opacity: 0.9;
-	}
-	html.zoom #zoomed_image_source{
-	    display: block;
-	    position: fixed;
-	    bottom: 15px;
-	    left: 50%;
-	    transform: translateX(-50%);
-	}
-	#zoomed_image_source{
-	    display: none;
-	    z-index: 2002;
-	    color: white;
 	}
 </style>

@@ -6,7 +6,7 @@
 		class="picture"
 		v-bind:data-id="id"
 		v-bind:data-source="source"
-		v-on:click="$parent.$emit('fullscreenPicture', id)"
+		v-on:click="$parent.$emit('zoomPicture', id)"
 	>
 </template>
 <script>
