@@ -1,7 +1,10 @@
 <template>
 	<div class="gallery">
 		<div class="zoom_blur_background" v-on:click="closeZoom"></div>
-		<img class="zoomed_image" alt="" v-on:click="closeZoom">
+		<picture class="zoomed_image" v-on:click="closeZoom">
+			<source :srcset="currentWebpSrc" type="image/webp" />
+			<img :src="currentJpgSrc" type="image/jpg" />
+		</picture>
 		<span class="zoomed_image_source"></span>
 		<div class="gallery_control_container">
 			<img class="gallery_control" alt="" v-on:click="scroll(-1)" src="~/assets/arrow_back.svg">
@@ -17,6 +20,13 @@
 <script>
 	export default {
 		props: [],
+		data: function() {
+			return {
+				currentJpgSrc: " ",
+				currentWebpSrc: " ",
+				activeId: 1,
+			}
+		},
 		mounted: function() {
 			this.$on('zoomPicture', function (id) {
 				var picture;
@@ -33,19 +43,18 @@
 			  $(this.$el).addClass("zoom");
 
 			  var pos = $(picture).offset();
-			  var src = $(picture).attr("src");
 			  var height = $(picture).height();
 			  var width = $(picture).width();
-
-				console.log(src);
 
 				var zoomedImage = $(this.$el).find(".zoomed_image");
 				zoomedImage.show();
 
-			  function setToOrgiginalPos(pos, src, width, height){
+				this.currentWebpSrc = $(picture).attr("data-webp-src");
+				this.currentJpgSrc = $(picture).attr("data-jpg-src");
+
+			  function setToOrgiginalPos(pos, width, height){
 			    return new Promise(function(resolve, reject) {
 						console.log(pos);
-			      zoomedImage.attr("src", src);
 			      zoomedImage.offset(pos);
 			      zoomedImage.css("width",width);
 			      zoomedImage.css("height",height);
@@ -118,18 +127,13 @@
 			  }
 
 			  setSource(this.$el, picture)
-			  .then(setToOrgiginalPos(pos, src, width, height))
+			  .then(setToOrgiginalPos(pos, width, height))
 				.then(activateBlurBackground(this.$el))
 			  .then(centerImagePX)
 			  .then(centerImagePC)
 			  .then(extendPX)
 			  .then(extendPC);
 			});
-		},
-		data: function() {
-			return {
-				activeId: 1,
-			};
 		},
 		methods: {
 			scroll: function(direction){
@@ -165,7 +169,8 @@
 
 				zoomedImage.hide();
 				zoomedImage.removeAttr("style");
-				zoomedImage.removeAttr("src");
+				this.currentWebpSrc = " ";
+				this.currentJpgSrc = " ";
 			},
 		},
 	}
@@ -229,5 +234,9 @@
 	.zoomed_image {
 		position: fixed;
 		z-index: 2002;
+	}
+	.zoomed_image img {
+		width: 100%;
+  	height: 100%;
 	}
 </style>

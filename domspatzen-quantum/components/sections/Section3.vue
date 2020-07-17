@@ -28,7 +28,7 @@
 				<galleryImage src="3.jpg" alt="Teamfoto vor unserem Stand" id="1"></galleryImage>
 				<galleryImage src="4.jpg" alt="unser Stand" id="2"></galleryImage>
 				<galleryImage src="5.jpg" alt="Besuch vom Kultusminister an unserem Stand" id="3"></galleryImage>
-				<galleryImage src="6.png" alt="Preisverleihung" id="4"></galleryImage>
+				<galleryImage src="6.jpg" alt="Preisverleihung" id="4"></galleryImage>
 			</gallery>
 			<news-container>
 				<news content="Idowa" href="https://www.idowa.de/gallery.vilsbiburg-ueberraschende-konzepte-bei-jugend-forscht.78194094-a3b0-40f7-8b1d-e13d65c460de.html"></news>
@@ -63,7 +63,7 @@
 			<gallery>
 				<galleryImage src="21.jpg" alt="Wir am Rednerpult" id="1"></galleryImage>
 				<galleryImage src="22.jpg" alt="Teamfoto vo unseren Plakaten am ISC" id="2"></galleryImage>
-				<galleryImage src="23.png" alt="während des Vortrags" id="3"></galleryImage>
+				<galleryImage src="23.jpg" alt="während des Vortrags" id="3"></galleryImage>
 			</gallery>
 			<news-container>
 				<news content="YouTube (Aufzeichnung)" href="https://www.youtube.com/watch?v=aM_pAA9FdYY"></news>
@@ -76,7 +76,7 @@
 			<location content="36C3 (Chaos Zone)"></location>
 			<date content="29.12.2019 19:00"></date>
 			<gallery>
-				<galleryImage src="26.JPG" alt="Rakete" id="1" data-source="Freddy2001 from Wikimedia Commons"></galleryImage>
+				<galleryImage src="26.jpg" alt="Rakete" id="1" data-source="Freddy2001 from Wikimedia Commons"></galleryImage>
 				<galleryImage src="27.jpg" alt="Rakete mit uns" id="2"></galleryImage>
 				<galleryImage src="24.jpg" alt="CCC RGB Einhorn" id="3"></galleryImage>
 				<galleryImage src="25.jpg" alt="CCC Chaos Zone" id="4"></galleryImage>
@@ -122,5 +122,8 @@
 	.tweetContainer {
 	  display: flex;
 	  justify-content: center;
+	}
+	img[lazy='loading'] {
+	  filter: blur(15px);
 	}
 </style>

@@ -42,8 +42,12 @@ export default {
 	],
   plugins: [
   ],
-  buildModules: [
+	buildModules: [
+    '@aceforth/nuxt-optimized-images',
   ],
+  optimizedImages: {
+    optimizeImages: true
+  },
   modules: [
     '@nuxtjs/pwa',
   ],
