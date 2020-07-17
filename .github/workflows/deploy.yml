@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  push: 
-    branches:   
+  push:
+    branches:
       - dev
 
 jobs:
@@ -13,11 +13,23 @@ jobs:
       uses: actions/checkout@v2
       with:
         persist-credentials: false
+
+    - name: "Install Dependencies"
+      run: npm install
+      working-directory: domspatzen-quantum
+
+    - name: "Build static Website"
+      run: npm run generate
+      working-directory: domspatzen-quantum
+
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.5
       with:
         BRANCH: master
-        FOLDER: src/
+        FOLDER: domspatzen-quantum/dist/
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: dev
         SINGLE_COMMIT: true
+
+    - name: "Notify Google Search Index"
+      run: curl http://www.google.com/ping?sitemap=https://domspatzen-quantum.de/sitemap.xml
