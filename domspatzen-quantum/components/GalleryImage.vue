@@ -8,8 +8,8 @@
 		v-bind:data-webp-src="require('~/assets/pictures/' + this.src + '?webp')"
 		v-on:click="$parent.$emit('zoomPicture', id)"
 	>
-		<source :srcSet="require('~/assets/pictures/' + this.src + '?resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700&sizes[]=800&sizes[]=900&sizes[]=1000&sizes[]=1200&sizes[]=1400').srcSet" type="image/jpg" />
 		<source :srcSet="require('~/assets/pictures/' + this.src + '?webp')" type="image/webp" />
+		<source :srcSet="require('~/assets/pictures/' + this.src + '?resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700&sizes[]=800&sizes[]=850').srcSet" type="image/jpg" />
 		<img :src="require('~/assets/pictures/' + src)" />
 	</picture>
 </template>
