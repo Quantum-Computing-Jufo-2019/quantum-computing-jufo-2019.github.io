@@ -11,7 +11,8 @@ export default {
       { hid: 'description', name: 'description', content: 'Quantencomputer Jugend Forscht' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{ rel: "preload", href: "/fonts/POLYA.woff2", as: "font", type: "font/woff2", crossorigin: ""},
     ],
 		script: [
 				{
