@@ -194,6 +194,9 @@
   }
 	.gallery_control {
 		width: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 	}
 	.picture_container {
 		display: flex;
