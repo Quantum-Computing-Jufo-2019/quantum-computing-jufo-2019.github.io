@@ -21,6 +21,9 @@
 <style>
 	.picture, .picture img {
 		height: 400px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 	}
 	#zoomed_image {
 		position: fixed;
