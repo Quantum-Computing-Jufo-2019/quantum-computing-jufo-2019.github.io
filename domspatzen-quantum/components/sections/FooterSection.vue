@@ -1,7 +1,7 @@
 <template>
 	<div class="section" id="footer_section">
 		<p class="footer_text footer_text_copyright">©Jakov Wallbrecher (14), Paul Schappert (15), Jonathan Treffler (16) , 2019</p>
-    <div class="footer_text_phone_copyright">
+    <div class="footer_text footer_text_phone_copyright">
     	<span>Jakov Wallbrecher (14)</span>
 			<span>Paul Schappert (15)</span>
 			<span>Jonathan Treffler (16)</span>
