@@ -13,11 +13,14 @@
 	.date {
 		width: fit-content;
 		margin: auto;
+    margin-bottom: 5px;
 	}
   .date_icon {
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    object-fit: contain;
+    margin-right: 4px;
   }
 	.date_text {
 		vertical-align: super;
