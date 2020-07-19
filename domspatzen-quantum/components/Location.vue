@@ -18,6 +18,8 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    object-fit: contain;
+    margin-right: 4px;
   }
 	.location_text{
 			margin: 0px;
