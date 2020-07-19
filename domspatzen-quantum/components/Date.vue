@@ -14,6 +14,11 @@
 		width: fit-content;
 		margin: auto;
 	}
+  .date_icon {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 	.date_text {
 		vertical-align: super;
 		color: white;
