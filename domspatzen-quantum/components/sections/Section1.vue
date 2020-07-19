@@ -44,8 +44,7 @@
 	}
 
 	html.phone #scroll_button {
-		width: 200px;
-		height: 200px;
+		display: none;
 	}
 
 	html:not(.mobile) #scroll_button:hover {
