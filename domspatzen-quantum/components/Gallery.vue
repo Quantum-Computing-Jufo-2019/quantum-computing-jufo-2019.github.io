@@ -189,6 +189,9 @@
 		vertical-align: middle;
 		display: flex;
 	}
+  html.mobile .gallery_control_container {
+    display: none;
+  }
 	.gallery_control {
 		width: 100%;
 	}
@@ -202,6 +205,9 @@
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 	}
+  html.mobile .picture_container {
+    width: 100%;
+  }
 	.picture_container::-webkit-scrollbar {
 			width: 0;
 			height: 0;
