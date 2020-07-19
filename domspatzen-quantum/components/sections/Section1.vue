@@ -5,36 +5,35 @@
 	</div>
 </template>
 <style>
-	#first_section{
+	#first_section {
 		min-width: 100%;
 		min-height: 100%;
 		background-color: var(--green2);
 		display: grid;
 		place-items: center;
 	}
-	#main_headline{
+
+	#main_headline {
 		position: absolute;
 		bottom: 50%;
+		left: 50%;
 		font-family: "polya";
-		font-size: -webkit-xxx-large;
 		color: black;
 		vertical-align: middle;
 		margin: 0px;
-		transform: translateY(50%);
+		transform: translate(-50%, 50%);
+		width: 90%;
 	}
-	html.phone #main_headline{
-			transform: translateY(50%) translateY(-50px);
+
+	html:not(.phone) #main_headline {
+		font-size: -webkit-xxx-large;
 	}
-	html:not(.phone) #main_headline{
-			width: 100%;
+
+	html.phone #main_headline {
+		font-size: 80px;
 	}
-	html.phone #main_headline{
-			margin: 0px 5% 0px 5%;
-	}
-	html.phone #main_headline{
-			font-size: 80px;
-	}
-	#scroll_button{
+
+	#scroll_button {
 		position: absolute;
 		bottom: 30px;
 		border-radius: 100%;
@@ -42,11 +41,13 @@
 		transform: translateX(-50%);
 		background-color: white;
 	}
-	html.phone #scroll_button{
-			width: 200px;
-			height: 200px;
+
+	html.phone #scroll_button {
+		width: 200px;
+		height: 200px;
 	}
-	html:not(.mobile) #scroll_button:hover{
+
+	html:not(.mobile) #scroll_button:hover {
 		background-color: lightgray;
 	}
 </style>
