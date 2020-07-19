@@ -13,6 +13,7 @@
 	.date {
 		width: fit-content;
 		margin: auto;
+    margin-bottom: 5px;
 	}
   .date_icon {
     -moz-user-select: none;
