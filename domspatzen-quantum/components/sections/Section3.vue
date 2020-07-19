@@ -13,6 +13,7 @@
 				<news content="Mittelbayerische" href="https://www.mittelbayerische.de/region/regensburg-stadt-nachrichten/domspatzen-gewinnen-bei-jugend-forscht-21179-art1752772.html"></news>
 			</news-container>
 			<spacer></spacer>
+
 			<location content="Neutraubling / Vortrag bei der Krones AG"></location>
 			<date content="25.3.2019"></date>
 			<gallery>
@@ -22,6 +23,7 @@
 				<galleryImage src="8.jpeg" alt="Foto mit Patrick Glauner und unserem Projektbetreuer Rene Grünbauer" id="4"></galleryImage>
 			</gallery>
 			<spacer></spacer>
+
 			<location content="Vilsbiburg / Landesentscheid"></location>
 			<date content="1. - 3.4.2019"></date>
 			<gallery>
@@ -36,6 +38,7 @@
 				<news content="YouTube" href="https://www.youtube.com/watch?v=FhZ94-oB5o0"></news>
 			</news-container>
 			<spacer></spacer>
+
 			<location content="München / Staatsempfang"></location>
 			<date content="9.5.2019"></date>
 			<gallery>
@@ -44,6 +47,7 @@
 				<galleryImage src="12.jpeg" alt="Teamfoto mit Projektbetreuer Rene Grünbauer" id="3" data-source="Jugend Forscht Bayern"></galleryImage>
 			</gallery>
 			<spacer></spacer>
+
 			<location content="Chemnitz / Bundesentscheid"></location>
 			<date content="16.5 - 19.5.2019"></date>
 			<gallery>
@@ -56,6 +60,20 @@
 			<news-container>
 				<news content="Domspatzen" href="https://www.domspatzen.de/gymnasium/aktuelles/detail/article/eine-schule-mit-den-faechern-musik-forschen-und-reisen.html"></news>
 			</news-container>
+			<spacer></spacer>
+
+			<location content="Vortrag am Max Planck Institut für Quantenoptik"></location>
+			<date content="29.5.2019"></date>
+			<gallery>
+				<galleryImage src="31.jpg" alt="" id="1"></galleryImage>
+				<galleryImage src="32.jpg" alt="" id="2"></galleryImage>
+				<galleryImage src="33.jpg" alt="" id="3"></galleryImage>
+				<galleryImage src="34.jpg" alt="" id="4"></galleryImage>
+				<galleryImage src="35.jpg" alt="" id="5"></galleryImage>
+				<galleryImage src="36.jpg" alt="" id="6"></galleryImage>
+				<galleryImage src="37.jpg" alt="" id="7"></galleryImage>
+				<galleryImage src="38.jpg" alt="" id="8"></galleryImage>
+			</gallery>
 			<spacer></spacer>
 
 			<location content="ISC 2019"></location>
