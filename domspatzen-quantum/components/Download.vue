@@ -12,7 +12,7 @@
 	}
 </script>
 <style>
-	.download{
+	.download {
 		margin: 5px;
 		padding: 5px;
 		display: flex;
@@ -23,22 +23,26 @@
 		flex-grow: 200;
 		flex-shrink: 0;
 	}
-	.download_a{
+	.download_a {
 		color: black;
 		text-decoration: none;
 	}
-	.download_icon{
+	.download_icon {
 		width: 50px;
 		display: block;
 		margin-left: auto;
 		margin-right: auto
 	}
-	.download_text{
+	html.phone .download_icon {
+		display: none;
+	}
+	.download_text {
 		text-align: center;
 		font-size: 20px;
 		margin: 4px 0 4px 0;
 	}
-	html.phone .download_text{
-			font-size: 50px;
+	html.phone .download_text {
+			font-size: 30px;
+			overflow-wrap: break-word;
 	}
 </style>
