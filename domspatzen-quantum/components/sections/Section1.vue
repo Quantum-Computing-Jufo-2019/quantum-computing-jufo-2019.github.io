@@ -30,7 +30,8 @@
 	}
 
 	html.phone #main_headline {
-		font-size: 80px;
+		font-size: 30px;
+    overflow-wrap: break-word;
 	}
 
 	#scroll_button {
