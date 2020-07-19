@@ -32,7 +32,10 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto
-	}
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 	html.phone .download_icon {
 		display: none;
 	}
