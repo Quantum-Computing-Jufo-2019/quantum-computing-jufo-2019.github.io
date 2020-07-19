@@ -14,6 +14,11 @@
 		width: fit-content;
 		margin: auto;
 	}
+  .location_icon {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 	.location_text{
 			margin: 0px;
 			vertical-align: super;
