@@ -81,7 +81,7 @@
 				<galleryImage src="24.jpg" alt="CCC RGB Einhorn" id="3"></galleryImage>
 				<galleryImage src="25.jpg" alt="CCC Chaos Zone" id="4"></galleryImage>
 				<galleryImage src="28.jpeg" alt="Löten" id="5"></galleryImage>
-				<galleryImage src="29.jpeg" alt="Chaos Zone Gruppenbild" id="6"></galleryImage>
+				<galleryImage src="29.jpg" alt="Chaos Zone Gruppenbild" id="6"></galleryImage>
 				<galleryImage src="30.jpeg" alt="Vortrag Plakat CCC Design" id="7"></galleryImage>
       </gallery>
 		</div>
