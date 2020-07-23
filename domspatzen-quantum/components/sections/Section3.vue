@@ -91,6 +91,15 @@
 			</div>
 			<spacer></spacer>
 
+			<location content="Empfang der Bundeskanzlerin"></location>
+			<date content="19.9.2019"></date>
+			<gallery>
+				<galleryImage src="39.jpg" alt="Gruppenfoto" id="1" data-source="Bundesregierung / Sandra Steins"></galleryImage>
+				<galleryImage src="40.jpg" alt="Gruppenfoto" id="2" data-source=""></galleryImage>
+				<galleryImage src="41.jpg" alt="Gruppenfoto" id="3" data-source=""></galleryImage>
+      </gallery>
+			<spacer></spacer>
+
 			<location content="36C3 (Chaos Zone)"></location>
 			<date content="29.12.2019 19:00"></date>
 			<gallery>
