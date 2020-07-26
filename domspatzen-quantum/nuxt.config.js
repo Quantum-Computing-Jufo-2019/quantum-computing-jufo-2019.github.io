@@ -52,7 +52,7 @@ export default {
 		'@nuxtjs/pwa',
 	],
 	build: {
-		extend (config, ctx,) {
+		extend (config, ctx) {
 		},
 	},
 }
