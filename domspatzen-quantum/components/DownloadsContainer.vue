@@ -1,6 +1,6 @@
 <template>
 	<div id="downloads_flexbox">
-		<slot></slot>
+		<slot />
 	</div>
 </template>
 <style>

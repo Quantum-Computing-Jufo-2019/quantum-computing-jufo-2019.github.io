@@ -1,5 +1,5 @@
 <template>
-	<div class="section" id="fourth_section">
+	<div id="fourth_section" class="section">
 		<headline>Wir bedanken uns bei:</headline>
 		<!--<p>Wir bedanken uns bei unserem Projektbetreuer René Grünbauer für die Betreuung und den Kontakt zum Forschungszentrum Jülich. Außerdem möchten wir uns bei Prof. Dr. Kristel Michielsen vom Forschungszentrum Jülich für ihre Unterstützung und die Rechenzeit am D-Wave Quantencomputer bedanken. Nicht zuletzt wollen wir Herrn Dennis Willsch aus der Forschungsgruppe von Prof. Michielsen für die Erklärungen und Hilfestellungen rund um die Benutzung und Steuerung des Quantencomputers danken.</p>-->
 		<ul id="thanks_list">
@@ -18,13 +18,13 @@
 	</div>
 </template>
 <script>
-	import Headline from "~/components/Headline.vue";
+import Headline from '~/components/Headline.vue'
 
-	export default {
-		components: {
-			Headline,
-		},
-	};
+export default {
+	components: {
+		Headline,
+	},
+}
 </script>
 <style>
 	#fourth_section{
