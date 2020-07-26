@@ -34,24 +34,24 @@ export default {
 		FooterSection,
 		SelectionsContainer,
 	},
-	mounted () {
+	mounted() {
 		this.checkDeviceType()
 	},
 	methods: {
-		checkDeviceType () {
+		checkDeviceType() {
 			const md = new MobileDetect(window.navigator.userAgent)
-		  const html = document.getElementsByTagName('html')[0]
+			const html = document.getElementsByTagName('html')[0]
 
-		  this.setClassState(md.mobile(), html, 'mobile')
-		  this.setClassState(md.phone(), html, 'phone')
-		  this.setClassState(md.tablet(), html, 'tablet')
+			this.setClassState(md.mobile(), html, 'mobile')
+			this.setClassState(md.phone(), html, 'phone')
+			this.setClassState(md.tablet(), html, 'tablet')
 		},
-		setClassState (condition, element, class_name) {
-		  if (condition) {
-		    element.classList.add(class_name)
-		  } else {
-		    element.classList.remove(class_name)
-		  }
+		setClassState(condition, element, class_name) {
+			if (condition) {
+				element.classList.add(class_name)
+			} else {
+				element.classList.remove(class_name)
+			}
 		},
 	},
 }
