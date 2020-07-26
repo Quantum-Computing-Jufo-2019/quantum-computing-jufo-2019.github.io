@@ -20,6 +20,5 @@ module.exports = {
 		'vue/html-indent': [ 'error', 'tab', ],
 		'no-tabs': 0,
 		'array-bracket-spacing': [ 'error', 'always', ],
-		'comma-spacing': [ 'error', { before: false, after: true, }, ],
 	},
 }
