@@ -116,7 +116,6 @@ export default {
 			  function setSource (thisEl, picture,) {
 			      return new Promise(function (resolve, reject,) {
 			          const source = $(picture,).attr('data-source',)
-					console.log(picture, source,)
 			          if (source) {
 						$(thisEl,).find('.zoomed_image_source',).text('Quelle: ' + source,)
 			          } else {
