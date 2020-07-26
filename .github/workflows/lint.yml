@@ -1,0 +1,24 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Install dependencies
+      working-directory: domspatzen-quantum
+      run: npm ci
+    - name: Lint
+      working-directory: domspatzen-quantum
+      run: npm run lint
