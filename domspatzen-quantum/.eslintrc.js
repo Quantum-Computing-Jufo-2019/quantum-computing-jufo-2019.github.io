@@ -15,10 +15,18 @@ module.exports = {
 	],
 	// add your custom rules here
 	rules: {
-		'comma-dangle': [ 'error', 'always', ],
+		'comma-dangle': [ 'error', {
+			arrays: 'always',
+			objects: 'always',
+			imports: 'never',
+			exports: 'never',
+			functions: 'never',
+		}, ],
 		indent: [ 'error', 'tab', ],
 		'vue/html-indent': [ 'error', 'tab', ],
 		'no-tabs': 0,
 		'array-bracket-spacing': [ 'error', 'always', ],
+		'comma-style': [ 'error', 'last', ],
+		'comma-spacing': [ 'error', { before: false, after: true, }, ],
 	},
 }
