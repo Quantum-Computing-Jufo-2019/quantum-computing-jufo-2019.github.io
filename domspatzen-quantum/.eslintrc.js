@@ -28,5 +28,6 @@ module.exports = {
 		'array-bracket-spacing': [ 'error', 'always', ],
 		'comma-style': [ 'error', 'last', ],
 		'comma-spacing': [ 'error', { before: false, after: true, }, ],
+		'space-before-function-paren': [ 'error', 'never', ],
 	},
 }
