@@ -20,15 +20,15 @@
 <script>
 export default {
 	props: [],
-	data () {
+	data() {
 		return {
 			currentJpgSrc: '',
 			currentWebpSrc: '',
 			activeId: 1,
 		}
 	},
-	mounted () {
-		this.$on('zoomPicture', function (id) {
+	mounted() {
+		this.$on('zoomPicture', function(id) {
 			let picture
 			const picture_container = $(this.$el).find('.picture_container')[0]
 			console.log(picture_container)
@@ -52,8 +52,8 @@ export default {
 			this.currentWebpSrc = $(picture).attr('data-webp-src')
 			this.currentJpgSrc = $(picture).attr('data-jpg-src')
 
-			function setToOrgiginalPos (pos, width, height) {
-				return new Promise(function (resolve, reject) {
+			function setToOrgiginalPos(pos, width, height) {
+				return new Promise(function(resolve, reject) {
 					console.log(pos)
 					zoomedImage.offset(pos)
 					zoomedImage.css('width', width)
@@ -64,8 +64,8 @@ export default {
 				})
 			}
 
-			function activateBlurBackground (thisEl) {
-				return new Promise(function (resolve, reject) {
+			function activateBlurBackground(thisEl) {
+				return new Promise(function(resolve, reject) {
 					const zoomBlurBackground = $(thisEl).find('.zoom_blur_background')
 					zoomBlurBackground.show()
 					zoomBlurBackground.animate({
@@ -74,19 +74,19 @@ export default {
 				})
 			}
 
-			function centerImagePX () {
-				return new Promise(function (resolve, reject) {
+			function centerImagePX() {
+				return new Promise(function(resolve, reject) {
 					zoomedImage.animate({
 						top: ($('html').height() - zoomedImage.height()) / 2 + 'px',
 						left: ($('html').width() - zoomedImage.width()) / 2 + 'px',
-					}, function () {
+					}, function() {
 						resolve()
 					})
 				})
 			}
 
-			function centerImagePC () {
-				return new Promise(function (resolve, reject) {
+			function centerImagePC() {
+				return new Promise(function(resolve, reject) {
 					zoomedImage.css({
 						top: '50%',
 						left: '50%',
@@ -96,21 +96,21 @@ export default {
 				})
 			}
 
-			function extendPX () {
-				return new Promise(function (resolve, reject) {
+			function extendPX() {
+				return new Promise(function(resolve, reject) {
 					zoomedImage.css('width', '')
 					zoomedImage.css('height', '')
 					zoomedImage.animate({
 						'max-width': $('html').width() + 'px',
 						'max-height': $('html').height() + 'px',
-					}, 'linear', function () {
+					}, 'linear', function() {
 						resolve()
 					})
 				})
 			}
 
-			function extendPC () {
-				return new Promise(function (resolve, reject) {
+			function extendPC() {
+				return new Promise(function(resolve, reject) {
 					zoomedImage[0].style.maxWidth = ''
 					zoomedImage[0].style.maxWidth = '100%'
 					zoomedImage[0].style.maxHeight = ''
@@ -119,8 +119,8 @@ export default {
 				})
 			}
 
-			function setSource (thisEl, picture) {
-				return new Promise(function (resolve, reject) {
+			function setSource(thisEl, picture) {
+				return new Promise(function(resolve, reject) {
 					const source = $(picture).attr('data-source')
 					if (source) {
 						$(thisEl).find('.zoomed_image_source').text('Quelle: ' + source)
@@ -141,7 +141,7 @@ export default {
 		})
 	},
 	methods: {
-		scroll (direction) {
+		scroll(direction) {
 			const picture_container = $(this.$el).find('.picture_container')[0]
 			const pictures = picture_container.childNodes
 
@@ -162,14 +162,14 @@ export default {
 				this.activeId = new_current_id
 			}
 		},
-		closeZoom () {
+		closeZoom() {
 			const zoomedImage = $(this.$el).find('.zoomed_image')
 			const zoomBlurBackground = $(this.$el).find('.zoom_blur_background')
 
 			const self = this
 			zoomBlurBackground.animate({
 				opacity: 0,
-			}, function () {
+			}, function() {
 				$(self.$el).removeClass('zoom')
 				zoomBlurBackground.hide()
 			})

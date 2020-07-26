@@ -15,35 +15,35 @@
 </template>
 <script>
 export default {
-	mounted () {
+	mounted() {
 		this.check_cookie_permission()
 	},
 	methods: {
-		run_google_analytics () {
+		run_google_analytics() {
 			window.dataLayer = window.dataLayer || []
-			function gtag () { dataLayer.push(arguments) }
+			function gtag() { dataLayer.push(arguments) }
 			gtag('js', new Date())
 			gtag('config', 'UA-139965444-1')
 		},
-		check_cookie_permission () {
+		check_cookie_permission() {
 			if (this.getCookie('cookie_level') == '') {
 				$('#cookie_alert').show()
 			} else {
 				this.cookies_accepted()
 			}
 		},
-		cookies_accepted () {
+		cookies_accepted() {
 			this.run_google_analytics()
 		},
-		accept_cookies () {
+		accept_cookies() {
 			this.setCookie('cookie_level', '1', 400)
 			this.cookies_accepted()
 			$('#cookie_alert').hide()
 		},
-		decline_cookies () {
+		decline_cookies() {
 			$('#cookie_alert').hide()
 		},
-		getCookie (cname) {
+		getCookie(cname) {
 			const name = cname + '='
 			const decodedCookie = decodeURIComponent(document.cookie)
 			const ca = decodedCookie.split(';')
@@ -58,7 +58,7 @@ export default {
 			}
 			return ''
 		},
-		setCookie (cname, cvalue, exdays) {
+		setCookie(cname, cvalue, exdays) {
 			const d = new Date()
 			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
 			const expires = 'expires=' + d.toUTCString()
