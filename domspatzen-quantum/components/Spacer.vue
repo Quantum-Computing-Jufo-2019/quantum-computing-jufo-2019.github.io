@@ -1,5 +1,5 @@
 <template>
-	<div class="spacer"></div>
+	<div class="spacer" />
 </template>
 <style>
 	.spacer {

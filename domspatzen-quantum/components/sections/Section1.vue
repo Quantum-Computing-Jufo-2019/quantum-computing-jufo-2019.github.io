@@ -1,7 +1,16 @@
 <template>
-	<div class="section" id="first_section">
-		<h1 id="main_headline">Lösung des n-Damenproblems auf einem adiabatischen Quantencomputer</h1>
-		<svg id="scroll_button" onclick="$('body').scrollTo('#second_section',{duration: 500, easing: 'swing'});" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--green2)" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+	<div id="first_section" class="section">
+		<h1 id="main_headline">
+			Lösung des n-Damenproblems auf einem adiabatischen Quantencomputer
+		</h1>
+		<svg
+			id="scroll_button"
+			onclick="$('body').scrollTo('#second_section',{duration: 500, easing: 'swing'});"
+			xmlns="http://www.w3.org/2000/svg"
+			width="75"
+			height="75"
+			viewBox="0 0 24 24"
+		><path fill="var(--green2)" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" /><path fill="none" d="M0 0h24v24H0V0z" /></svg>
 	</div>
 </template>
 <style>
