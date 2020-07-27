@@ -153,8 +153,8 @@ export default {
 		flex-wrap: nowrap;
 	}
 	.tweetContainer {
-	  display: flex;
-	  justify-content: center;
+		display: flex;
+		justify-content: center;
 	}
 	.tweetContainer a {
 		width: 70%;
