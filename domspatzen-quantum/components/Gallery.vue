@@ -208,6 +208,10 @@ export default {
 
 			let start;
 
+			function easeInOutCubic(x) {
+				return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+			}
+
 			function step(timestamp) {
 				if (start === undefined) {
 					start = timestamp;
@@ -215,9 +219,11 @@ export default {
 
 				const elapsed = timestamp - start;
 
-				console.log(elapsed, elapsed/options.duration);
+				const progress = Math.min(elapsed/options.duration, 1);
 
-				let currentLeft = scrollLeftStart + ((scrollLeftEnd - scrollLeftStart)*elapsed/options.duration);
+				console.log(elapsed, progress);
+
+				let currentLeft = scrollLeftStart + ((scrollLeftEnd - scrollLeftStart)*easeInOutCubic(progress));
 
 				console.log(currentLeft);
 
