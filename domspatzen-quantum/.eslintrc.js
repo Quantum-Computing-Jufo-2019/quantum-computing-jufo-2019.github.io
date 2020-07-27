@@ -22,6 +22,7 @@ module.exports = {
 			exports: 'never',
 			functions: 'never',
 		}, ],
+		semi: ["error", "always"],
 		indent: [ 'error', 'tab', ],
 		'vue/html-indent': [ 'error', 'tab', ],
 		'no-tabs': 0,
