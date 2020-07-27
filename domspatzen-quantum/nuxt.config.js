@@ -23,6 +23,7 @@ export default {
 				src: 'https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js',
 				type: 'text/javascript',
         async: true,
+        defer: true,
 			},
 			{
 				src: 'https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js',
