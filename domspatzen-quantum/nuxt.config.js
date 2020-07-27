@@ -10,7 +10,7 @@ export default {
 			{ hid: 'description', name: 'description', content: 'Informationen und Bilder zum Jugend Forscht Projekt über das Lösen von Optimierungsproblemen auf einem adiabatischen Quantencomputer. Von Paul Schappert, Jakov D. Wallbrecher und Jonathan Treffler', },
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', },
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.jpg', },
 			{ rel: 'preload', href: '/fonts/POLYA.woff2', as: 'font', type: 'font/woff2', crossorigin: '', },
 			{ rel: 'preconnect', href: 'https://www.google-analytics.com', },
 		],
@@ -28,11 +28,6 @@ export default {
 		],
 	},
 	loading: { color: '#fff', },
-	css: [
-		'css/global.css',
-	],
-	plugins: [
-	],
 	buildModules: [
 		'@aceforth/nuxt-optimized-images',
 	],
@@ -42,6 +37,11 @@ export default {
 	modules: [
 		'@nuxtjs/pwa',
 	],
+	pwa: {
+		icon: {
+	    iconSrc: "assets/logo.png"
+	  }
+	},
 	build: {
 		extend(config, ctx) {
 		},
