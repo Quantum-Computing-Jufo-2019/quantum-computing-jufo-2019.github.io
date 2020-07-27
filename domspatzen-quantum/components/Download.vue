@@ -9,7 +9,7 @@
 <script>
 export default {
 	props: [ 'content', 'href', ],
-}
+};
 </script>
 <style>
 	.download {

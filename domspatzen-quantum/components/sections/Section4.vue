@@ -18,13 +18,13 @@
 	</div>
 </template>
 <script>
-import Headline from '~/components/Headline.vue'
+import Headline from '~/components/Headline.vue';
 
 export default {
 	components: {
 		Headline,
 	},
-}
+};
 </script>
 <style>
 	#fourth_section{

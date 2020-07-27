@@ -12,10 +12,10 @@
 	</div>
 </template>
 <script>
-import Download from '~/components/Download.vue'
-import DownloadsContainer from '~/components/DownloadsContainer.vue'
-import Headline from '~/components/Headline.vue'
-import Github from '~/components/Github.vue'
+import Download from '~/components/Download.vue';
+import DownloadsContainer from '~/components/DownloadsContainer.vue';
+import Headline from '~/components/Headline.vue';
+import Github from '~/components/Github.vue';
 
 export default {
 	components: {
@@ -24,7 +24,7 @@ export default {
 		Github,
 		Headline,
 	},
-}
+};
 </script>
 <style>
 	#fifth_section{

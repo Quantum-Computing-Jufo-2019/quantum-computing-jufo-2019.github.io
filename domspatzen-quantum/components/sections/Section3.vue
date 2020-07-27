@@ -91,7 +91,7 @@
 					<picture>
 						<source :srcSet="require('~/assets/pictures/tweet.png?format=webp&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/webp">
 						<source :srcSet="require('~/assets/pictures/tweet.png?format=jpg&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/jpg">
-						<img :src="require('~/assets/pictures/tweet.png?format=webp')" draggable="false">
+						<img :src="require('~/assets/pictures/tweet.png?format=webp')" draggable="false" alt="Twitter Post von Tomtherhymer">
 					</picture>
 				</a>
 			</div>
@@ -121,14 +121,14 @@
 	</div>
 </template>
 <script>
-import Location from '~/components/Location.vue'
-import Date from '~/components/Date.vue'
-import News from '~/components/News.vue'
-import NewsContainer from '~/components/NewsContainer.vue'
-import Gallery from '~/components/Gallery.vue'
-import GalleryImage from '~/components/GalleryImage.vue'
-import Spacer from '~/components/Spacer.vue'
-import Headline from '~/components/Headline.vue'
+import Location from '~/components/Location.vue';
+import Date from '~/components/Date.vue';
+import News from '~/components/News.vue';
+import NewsContainer from '~/components/NewsContainer.vue';
+import Gallery from '~/components/Gallery.vue';
+import GalleryImage from '~/components/GalleryImage.vue';
+import Spacer from '~/components/Spacer.vue';
+import Headline from '~/components/Headline.vue';
 
 export default {
 	components: {
@@ -141,7 +141,7 @@ export default {
 		Spacer,
 		Headline,
 	},
-}
+};
 </script>
 <style>
 	#third_section{

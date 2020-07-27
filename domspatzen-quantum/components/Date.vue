@@ -9,7 +9,7 @@
 <script>
 export default {
 	props: [ 'content', ],
-}
+};
 </script>
 <style>
 	.date {
