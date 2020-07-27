@@ -21,13 +21,14 @@ export default {
 	methods: {
 		run_google_analytics() {
 			window.dataLayer = window.dataLayer || [];
+			// eslint-disable-next-line
 			function gtag() { dataLayer.push(arguments); }
 			gtag('js', new Date());
 			gtag('config', 'UA-139965444-1');
 		},
 		check_cookie_permission() {
-			if (this.getCookie('cookie_level') == '') {
-				this.$el.style.display = "";
+			if (this.getCookie('cookie_level') === '') {
+				this.$el.style.display = '';
 			} else {
 				this.cookies_accepted();
 			}
@@ -38,10 +39,10 @@ export default {
 		accept_cookies() {
 			this.setCookie('cookie_level', '1', 400);
 			this.cookies_accepted();
-			this.$el.style.display = "none";
+			this.$el.style.display = 'none';
 		},
 		decline_cookies() {
-			this.$el.style.display = "none";
+			this.$el.style.display = 'none';
 		},
 		getCookie(cname) {
 			const name = cname + '=';
@@ -49,10 +50,10 @@ export default {
 			const ca = decodedCookie.split(';');
 			for (let i = 0; i < ca.length; i++) {
 				let c = ca[i];
-				while (c.charAt(0) == ' ') {
+				while (c.charAt(0) === ' ') {
 					c = c.substring(1);
 				}
-				if (c.indexOf(name) == 0) {
+				if (c.indexOf(name) === 0) {
 					return c.substring(name.length, c.length);
 				}
 			}
