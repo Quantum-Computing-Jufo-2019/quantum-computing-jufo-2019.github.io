@@ -10,7 +10,7 @@
 	>
 		<source :srcSet="require('~/assets/pictures/' + this.src + '?format=webp&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/webp">
 		<source :srcSet="require('~/assets/pictures/' + this.src + '?format=jpg&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/jpg">
-		<img :src="require('~/assets/pictures/' + src)">
+		<img :src="require('~/assets/pictures/' + src)" loading="lazy">
 	</picture>
 </template>
 <script>
