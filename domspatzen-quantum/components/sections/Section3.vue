@@ -92,11 +92,13 @@
 						3 members of the Regensburger Domspatzen (13, 14, 15) show the professionals at <a href="https://twitter.com/isc19?ref_src=twsrc%5Etfw">@ISC19</a> how to solve the n-queens, the knights tour, the 4x4 sudoku, and the n-amazons problem on <a href="https://twitter.com/dwavesys?ref_src=twsrc%5Etfw">@dwavesys</a>. Chapeau! (credits to Kristel Michielsen from <a href="https://twitter.com/fzj_jsc?ref_src=twsrc%5Etfw">@fzj_jsc</a> for consulting.) <a href="https://twitter.com/DomspatzenRgbg?ref_src=twsrc%5Etfw">@DomspatzenRgbg</a> <a href="https://t.co/9QEmIAR2Mb">pic.twitter.com/9QEmIAR2Mb</a>
 					</p>&mdash; Thomas Lippert (@Tomtherhymer) <a href="https://twitter.com/Tomtherhymer/status/1141280921238331392?ref_src=twsrc%5Etfw">June 19, 2019</a>
 				</blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />-->
-				<picture>
-					<source :srcSet="require('~/assets/pictures/tweet.png?format=webp&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/webp">
-					<source :srcSet="require('~/assets/pictures/tweet.png?format=jpg&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/jpg">
-					<img :src="require('~/assets/pictures/tweet.png?format=webp')" draggable="false">
-				</picture>
+				<a href="https://twitter.com/Tomtherhymer/status/1141280921238331392?ref_src=twsrc%5Etfw" target="blank">
+					<picture>
+						<source :srcSet="require('~/assets/pictures/tweet.png?format=webp&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/webp">
+						<source :srcSet="require('~/assets/pictures/tweet.png?format=jpg&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/jpg">
+						<img :src="require('~/assets/pictures/tweet.png?format=webp')" draggable="false">
+					</picture>
+				</a>
 			</div>
 			<spacer />
 
@@ -159,12 +161,12 @@ export default {
 	  display: flex;
 	  justify-content: center;
 	}
-	.tweetContainer picture {
+	.tweetContainer a {
 		width: 70%;
 		max-width: 550px;
 		max-height: 595px;
 	}
-	.tweetContainer img {
+	.tweetContainer img, .tweetContainer picture {
 		width: 100%;
 	}
 </style>
