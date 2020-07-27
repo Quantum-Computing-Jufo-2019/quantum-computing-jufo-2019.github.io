@@ -14,6 +14,21 @@ export default {
 			{ rel: 'preload', href: '/fonts/POLYA.woff2', as: 'font', type: 'font/woff2', crossorigin: '', },
 		],
 		script: [
+      {
+				src: 'https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js',
+				type: 'text/javascript',
+        async: true,
+			},
+			{
+				src: 'https://cdn.jsdelivr.net/npm/sweetalert2@8',
+				type: 'text/javascript',
+        async: true,
+			},
+			{
+				src: 'https://www.googletagmanager.com/gtag/js?id=UA-139965444-1',
+				type: 'text/javascript',
+        async: true,
+			},
 			{
 				src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
 				type: 'text/javascript',
@@ -21,18 +36,7 @@ export default {
 			{
 				src: 'https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js',
 				type: 'text/javascript',
-			},
-			{
-				src: 'https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js',
-				type: 'text/javascript',
-			},
-			{
-				src: 'https://cdn.jsdelivr.net/npm/sweetalert2@8',
-				type: 'text/javascript',
-			},
-			{
-				src: 'https://www.googletagmanager.com/gtag/js?id=UA-139965444-1',
-				type: 'text/javascript',
+        async: true,
 			},
 		],
 	},
