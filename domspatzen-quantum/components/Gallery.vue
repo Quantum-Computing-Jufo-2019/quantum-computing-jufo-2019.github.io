@@ -323,9 +323,9 @@ export default {
 	    left: 50%;
 	    transform: translateX(-50%);
 	}
-  html.mobile .zoom_blur_background {
+  /*html.mobile .zoom_blur_background {
     display: none;
-  }
+  }*/
 	.zoomed_image_source {
 	    display: none;
 	    z-index: 2002;
