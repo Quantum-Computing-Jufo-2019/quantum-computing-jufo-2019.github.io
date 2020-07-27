@@ -14,7 +14,24 @@
 </template>
 <script>
 export default {
-	props: [ 'id', 'src', 'alt', 'source', ],
+	props: {
+		id: {
+			type: Number,
+			default: 0,
+		},
+		src: {
+			type: String,
+			default: '',
+		},
+		alt: {
+			type: String,
+			default: '',
+		},
+		source: {
+			type: String,
+			default: '',
+		},
+	},
 };
 </script>
 <style>
