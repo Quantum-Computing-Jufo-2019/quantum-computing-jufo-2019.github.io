@@ -39,8 +39,8 @@ export default {
 	],
 	pwa: {
 		icon: {
-	    iconSrc: 'assets/logo.png',
-	  },
+			iconSrc: 'assets/logo.png',
+		},
 	},
 	build: {
 		extend(config, ctx) {
