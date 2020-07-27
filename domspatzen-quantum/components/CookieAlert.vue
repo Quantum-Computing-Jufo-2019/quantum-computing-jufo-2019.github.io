@@ -27,7 +27,7 @@ export default {
 		},
 		check_cookie_permission() {
 			if (this.getCookie('cookie_level') == '') {
-				$('#cookie_alert').show();
+				this.$el.style.display = "";
 			} else {
 				this.cookies_accepted();
 			}
@@ -38,10 +38,10 @@ export default {
 		accept_cookies() {
 			this.setCookie('cookie_level', '1', 400);
 			this.cookies_accepted();
-			$('#cookie_alert').hide();
+			this.$el.style.display = "none";
 		},
 		decline_cookies() {
-			$('#cookie_alert').hide();
+			this.$el.style.display = "none";
 		},
 		getCookie(cname) {
 			const name = cname + '=';
