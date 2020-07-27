@@ -160,6 +160,7 @@ export default {
 	  justify-content: center;
 	}
 	.tweetContainer picture {
+		width: 70%;
 		max-width: 550px;
 		max-height: 595px;
 	}
