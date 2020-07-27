@@ -28,11 +28,6 @@ export default {
 		],
 	},
 	loading: { color: '#fff', },
-	css: [
-		'css/global.css',
-	],
-	plugins: [
-	],
 	buildModules: [
 		'@aceforth/nuxt-optimized-images',
 	],
@@ -42,6 +37,11 @@ export default {
 	modules: [
 		'@nuxtjs/pwa',
 	],
+	pwa: {
+		icon: {
+	    iconSrc: "assets/logo.png"
+	  }
+	},
 	build: {
 		extend(config, ctx) {
 		},
