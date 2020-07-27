@@ -16,7 +16,7 @@
 <script>
 export default {
 	props: [ 'id', 'src', 'alt', 'source', ],
-}
+};
 </script>
 <style>
 	.picture, .picture img {

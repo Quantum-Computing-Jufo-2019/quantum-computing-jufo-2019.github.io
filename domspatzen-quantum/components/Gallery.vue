@@ -25,53 +25,54 @@ export default {
 			currentJpgSrc: '',
 			currentWebpSrc: '',
 			activeId: 1,
-		}
+		};
 	},
 	mounted() {
 		this.$on('zoomPicture', function(id) {
-			let picture
-			const picture_container = $(this.$el).find('.picture_container')[0]
-			console.log(picture_container)
-			const pictures = picture_container.childNodes
+			let picture;
+			// const picture_container = $(this.$el).find('.picture_container')[0]
+			const picture_container = this.$el.querySelector('.picture_container');
+			console.log(picture_container);
+			const pictures = picture_container.childNodes;
 
 			for (let i = 0; i < pictures.length; i++) {
-				if ($(pictures[i]).attr('data-id') == id) {
-					picture = pictures[i]
+				if (pictures[i].getAttribute('data-id') == id) {
+					picture = pictures[i];
 				}
 			}
 
-			$(this.$el).addClass('zoom')
+			$(this.$el).addClass('zoom');
 
-			const pos = $(picture).offset()
-			const height = $(picture).height()
-			const width = $(picture).width()
+			const pos = $(picture).offset();
+			const height = $(picture).height();
+			const width = $(picture).width();
 
-			const zoomedImage = $(this.$el).find('.zoomed_image')
-			zoomedImage.show()
+			const zoomedImage = $(this.$el).find('.zoomed_image');
+			zoomedImage.show();
 
-			this.currentWebpSrc = $(picture).attr('data-webp-src')
-			this.currentJpgSrc = $(picture).attr('data-jpg-src')
+			this.currentWebpSrc = $(picture).attr('data-webp-src');
+			this.currentJpgSrc = $(picture).attr('data-jpg-src');
 
 			function setToOrgiginalPos(pos, width, height) {
 				return new Promise(function(resolve, reject) {
-					console.log(pos)
-					zoomedImage.offset(pos)
-					zoomedImage.css('width', width)
-					zoomedImage.css('height', height)
-					zoomedImage.css('max-width', width)
-					zoomedImage.css('max-height', height)
-					resolve()
-				})
+					console.log(pos);
+					zoomedImage.offset(pos);
+					zoomedImage.css('width', width);
+					zoomedImage.css('height', height);
+					zoomedImage.css('max-width', width);
+					zoomedImage.css('max-height', height);
+					resolve();
+				});
 			}
 
 			function activateBlurBackground(thisEl) {
 				return new Promise(function(resolve, reject) {
-					const zoomBlurBackground = $(thisEl).find('.zoom_blur_background')
-					zoomBlurBackground.show()
+					const zoomBlurBackground = $(thisEl).find('.zoom_blur_background');
+					zoomBlurBackground.show();
 					zoomBlurBackground.animate({
 						opacity: 0.8,
-					})
-				})
+					});
+				});
 			}
 
 			function centerImagePX() {
@@ -80,9 +81,9 @@ export default {
 						top: ($('html').height() - zoomedImage.height()) / 2 + 'px',
 						left: ($('html').width() - zoomedImage.width()) / 2 + 'px',
 					}, function() {
-						resolve()
-					})
-				})
+						resolve();
+					});
+				});
 			}
 
 			function centerImagePC() {
@@ -91,44 +92,44 @@ export default {
 						top: '50%',
 						left: '50%',
 						transform: 'translate(-50%, -50%)',
-					})
-					resolve()
-				})
+					});
+					resolve();
+				});
 			}
 
 			function extendPX() {
 				return new Promise(function(resolve, reject) {
-					zoomedImage.css('width', '')
-					zoomedImage.css('height', '')
+					zoomedImage.css('width', '');
+					zoomedImage.css('height', '');
 					zoomedImage.animate({
 						'max-width': $('html').width() + 'px',
 						'max-height': $('html').height() + 'px',
 					}, 'linear', function() {
-						resolve()
-					})
-				})
+						resolve();
+					});
+				});
 			}
 
 			function extendPC() {
 				return new Promise(function(resolve, reject) {
-					zoomedImage[0].style.maxWidth = ''
-					zoomedImage[0].style.maxWidth = '100%'
-					zoomedImage[0].style.maxHeight = ''
-					zoomedImage[0].style.maxHeight = '100%'
-					resolve()
-				})
+					zoomedImage[0].style.maxWidth = '';
+					zoomedImage[0].style.maxWidth = '100%';
+					zoomedImage[0].style.maxHeight = '';
+					zoomedImage[0].style.maxHeight = '100%';
+					resolve();
+				});
 			}
 
 			function setSource(thisEl, picture) {
 				return new Promise(function(resolve, reject) {
-					const source = $(picture).attr('data-source')
+					const source = $(picture).attr('data-source');
 					if (source) {
-						$(thisEl).find('.zoomed_image_source').text('Quelle: ' + source)
+						$(thisEl).find('.zoomed_image_source').text('Quelle: ' + source);
 					} else {
-						$(thisEl).find('.zoomed_image_source').text('')
+						$(thisEl).find('.zoomed_image_source').text('');
 					}
-					resolve()
-				})
+					resolve();
+				});
 			}
 
 			setSource(this.$el, picture)
@@ -137,20 +138,20 @@ export default {
 				.then(centerImagePX)
 				.then(centerImagePC)
 				.then(extendPX)
-				.then(extendPC)
-		})
+				.then(extendPC);
+		});
 	},
 	methods: {
 		scroll(direction) {
-			const picture_container = $(this.$el).find('.picture_container')[0]
-			const pictures = picture_container.childNodes
+			const picture_container = $(this.$el).find('.picture_container')[0];
+			const pictures = picture_container.childNodes;
 
-			const new_current_id = this.activeId + direction
+			const new_current_id = this.activeId + direction;
 
-			let new_current_picture
+			let new_current_picture;
 			for (let i = 0; i < pictures.length; i++) {
 				if ($(pictures[i]).attr('data-id') == new_current_id) {
-					new_current_picture = pictures[i]
+					new_current_picture = pictures[i];
 				}
 			}
 
@@ -161,40 +162,40 @@ export default {
 					duration: 500,
 				});
 
-				this.activeId = new_current_id
+				this.activeId = new_current_id;
 			}
 		},
 		closeZoom() {
-			const zoomedImage = $(this.$el).find('.zoomed_image')
-			const zoomBlurBackground = $(this.$el).find('.zoom_blur_background')
+			const zoomedImage = $(this.$el).find('.zoomed_image');
+			const zoomBlurBackground = $(this.$el).find('.zoom_blur_background');
 
-			const self = this
+			const self = this;
 			zoomBlurBackground.animate({
 				opacity: 0,
 			}, function() {
-				$(self.$el).removeClass('zoom')
-				zoomBlurBackground.hide()
-			})
+				$(self.$el).removeClass('zoom');
+				zoomBlurBackground.hide();
+			});
 
-			zoomedImage.hide()
-			zoomedImage.removeAttr('style')
-			this.currentWebpSrc = ''
-			this.currentJpgSrc = ''
+			zoomedImage.hide();
+			zoomedImage.removeAttr('style');
+			this.currentWebpSrc = '';
+			this.currentJpgSrc = '';
 		},
-		getOffset( el ) {
-	    var _x = 0;
-	    var _y = 0;
-	    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+		getOffset(el) {
+	    let _x = 0;
+	    let _y = 0;
+	    while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
 	        _x += el.offsetLeft;
 	        _y += el.offsetTop;
 	        el = el.offsetParent;
 	    }
-	    return { top: _y, left: _x };
+	    return { top: _y, left: _x, };
 		},
 		scrollToElement(options) {
-			let scrollLeftStart = options.container.scrollLeft;
-			let containerOffsetLeft = this.getOffset(options.container).left;
-			let scrollLeftEnd = options.element.offsetLeft - containerOffsetLeft;
+			const scrollLeftStart = options.container.scrollLeft;
+			const containerOffsetLeft = this.getOffset(options.container).left;
+			const scrollLeftEnd = options.element.offsetLeft - containerOffsetLeft;
 
 			let start;
 
@@ -208,9 +209,9 @@ export default {
 				}
 
 				const elapsed = timestamp - start;
-				const progress = Math.min(elapsed/options.duration, 1);
+				const progress = Math.min(elapsed / options.duration, 1);
 
-				let currentLeft = scrollLeftStart + ((scrollLeftEnd - scrollLeftStart)*easeInOutCubic(progress));
+				const currentLeft = scrollLeftStart + ((scrollLeftEnd - scrollLeftStart) * easeInOutCubic(progress));
 
 				options.container.scrollLeft = currentLeft;
 
@@ -220,9 +221,9 @@ export default {
 			}
 
 			window.requestAnimationFrame(step);
-		}
+		},
 	},
-}
+};
 </script>
 <style>
 	.gallery {

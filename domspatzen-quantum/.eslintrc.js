@@ -22,7 +22,7 @@ module.exports = {
 			exports: 'never',
 			functions: 'never',
 		}, ],
-		semi: ["error", "always"],
+		semi: [ 'error', 'always', ],
 		indent: [ 'error', 'tab', ],
 		'vue/html-indent': [ 'error', 'tab', ],
 		'no-tabs': 0,
@@ -31,4 +31,4 @@ module.exports = {
 		'comma-spacing': [ 'error', { before: false, after: true, }, ],
 		'space-before-function-paren': [ 'error', 'never', ],
 	},
-}
+};

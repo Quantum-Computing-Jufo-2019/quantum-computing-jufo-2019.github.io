@@ -121,14 +121,14 @@
 	</div>
 </template>
 <script>
-import Location from '~/components/Location.vue'
-import Date from '~/components/Date.vue'
-import News from '~/components/News.vue'
-import NewsContainer from '~/components/NewsContainer.vue'
-import Gallery from '~/components/Gallery.vue'
-import GalleryImage from '~/components/GalleryImage.vue'
-import Spacer from '~/components/Spacer.vue'
-import Headline from '~/components/Headline.vue'
+import Location from '~/components/Location.vue';
+import Date from '~/components/Date.vue';
+import News from '~/components/News.vue';
+import NewsContainer from '~/components/NewsContainer.vue';
+import Gallery from '~/components/Gallery.vue';
+import GalleryImage from '~/components/GalleryImage.vue';
+import Spacer from '~/components/Spacer.vue';
+import Headline from '~/components/Headline.vue';
 
 export default {
 	components: {
@@ -141,7 +141,7 @@ export default {
 		Spacer,
 		Headline,
 	},
-}
+};
 </script>
 <style>
 	#third_section{
