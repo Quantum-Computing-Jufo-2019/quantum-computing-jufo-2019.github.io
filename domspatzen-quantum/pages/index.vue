@@ -39,6 +39,7 @@ export default {
 	},
 	methods: {
 		checkDeviceType() {
+			// eslint-disable-next-line
 			const md = new MobileDetect(window.navigator.userAgent);
 			const html = document.getElementsByTagName('html')[0];
 
@@ -46,11 +47,11 @@ export default {
 			this.setClassState(md.phone(), html, 'phone');
 			this.setClassState(md.tablet(), html, 'tablet');
 		},
-		setClassState(condition, element, class_name) {
+		setClassState(condition, element, className) {
 			if (condition) {
-				element.classList.add(class_name);
+				element.classList.add(className);
 			} else {
-				element.classList.remove(class_name);
+				element.classList.remove(className);
 			}
 		},
 	},
@@ -59,21 +60,21 @@ export default {
 
 <style>
 	:root{
-	  --green1: #C0CF3A;
-	  --green2: #8AB833;
-	  --green3: #549E39;
-	  --red: #ea4335;
-	  --blue: #b0d3b6;
+		--green1: #C0CF3A;
+		--green2: #8AB833;
+		--green3: #549E39;
+		--red: #ea4335;
+		--blue: #b0d3b6;
 	}
 	.section{
-	    width: 100%;
+		width: 100%;
 	}
 	.section:not(#footer_section):not(#first_section){
-	    padding-bottom: 1%;
-	    padding-top: 1%;
+		padding-bottom: 1%;
+		padding-top: 1%;
 	}
 	html.phone .section:not(#footer_section):not(#first_section){
-	    padding-bottom: 5%;
-	    padding-top: 2%;
+		padding-bottom: 5%;
+		padding-top: 2%;
 	}
 </style>

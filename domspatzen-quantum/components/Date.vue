@@ -8,7 +8,12 @@
 </template>
 <script>
 export default {
-	props: [ 'content', ],
+	props: {
+		content: {
+			type: String,
+			default: '',
+		},
+	},
 };
 </script>
 <style>

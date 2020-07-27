@@ -12,7 +12,16 @@
 </template>
 <script>
 export default {
-	props: [ 'content', 'href', ],
+	props: {
+		content: {
+			type: String,
+			default: '',
+		},
+		href: {
+			type: String,
+			default: '',
+		},
+	},
 };
 </script>
 <style>
