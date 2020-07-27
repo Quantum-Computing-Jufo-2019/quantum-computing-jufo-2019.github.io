@@ -60,21 +60,21 @@ export default {
 
 <style>
 	:root{
-	  --green1: #C0CF3A;
-	  --green2: #8AB833;
-	  --green3: #549E39;
-	  --red: #ea4335;
-	  --blue: #b0d3b6;
+		--green1: #C0CF3A;
+		--green2: #8AB833;
+		--green3: #549E39;
+		--red: #ea4335;
+		--blue: #b0d3b6;
 	}
 	.section{
-	    width: 100%;
+		width: 100%;
 	}
 	.section:not(#footer_section):not(#first_section){
-	    padding-bottom: 1%;
-	    padding-top: 1%;
+		padding-bottom: 1%;
+		padding-top: 1%;
 	}
 	html.phone .section:not(#footer_section):not(#first_section){
-	    padding-bottom: 5%;
-	    padding-top: 2%;
+		padding-bottom: 5%;
+		padding-top: 2%;
 	}
 </style>
