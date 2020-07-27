@@ -20,11 +20,6 @@ export default {
 				type: 'text/javascript',
 				async: true,
 			},
-			/* {
-				src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
-				type: 'text/javascript',
-				async: true,
-			}, */
 			{
 				src: 'https://www.googletagmanager.com/gtag/js?id=UA-139965444-1',
 				type: 'text/javascript',
