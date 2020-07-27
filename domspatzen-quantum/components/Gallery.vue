@@ -55,6 +55,20 @@ export default {
 			this.currentWebpSrc = picture.getAttribute('data-webp-src');
 			this.currentJpgSrc = picture.getAttribute('data-jpg-src');
 
+			function setSource(thisEl, picture) {
+				return new Promise(function(resolve, reject) {
+					console.log("setSource");
+					const source = picture.getAttribute('data-source');
+					if (source) {
+						thisEl.querySelector('.zoomed_image_source').innerText = 'Quelle: ' + source;
+					} else {
+						thisEl.querySelector('.zoomed_image_source').innerText = '';
+					}
+
+					resolve();
+				});
+			}
+
 			function setToOrgiginalPos(pos, width, height) {
 				return new Promise(function(resolve, reject) {
 					console.log("setToOrgiginalPos");
@@ -66,9 +80,7 @@ export default {
 					zoomedImage.style.maxWidth = width + "px";
 					zoomedImage.style.maxHeight = height + "px";
 
-					setTimeout(function() {
-						resolve();
-					}, 1000);
+					resolve();
 				});
 			}
 
@@ -79,9 +91,7 @@ export default {
 					zoomBlurBackground.style.display = '';
 					zoomBlurBackground.style.opacity = 0.8;
 
-					setTimeout(function() {
-						resolve();
-					}, 1000);
+					resolve();
 				});
 			}
 
@@ -98,7 +108,7 @@ export default {
 					setTimeout(function() {
 						zoomedImage.classList.remove("topLeftTransition");
 						resolve();
-					}, 1000);
+					}, 500);
 				});
 			}
 
@@ -109,9 +119,7 @@ export default {
 					zoomedImage.style.left = '50%';
 					zoomedImage.style.transform = 'translate(-50%, -50%)';
 
-					setTimeout(function() {
-						resolve();
-					}, 1000);
+					resolve();
 				});
 			}
 
@@ -130,7 +138,7 @@ export default {
 					setTimeout(function() {
 						zoomedImage.classList.remove("maxWidthHeightTransition");
 						resolve();
-					}, 1000);
+					}, 500);
 				});
 			}
 
@@ -142,25 +150,15 @@ export default {
 					zoomedImage.style.maxHeight = '';
 					zoomedImage.style.maxHeight = '100%';
 
-					setTimeout(function() {
-						resolve();
-					}, 1000);
+					resolve();
 				});
 			}
 
-			function setSource(thisEl, picture) {
+			function activateClosing(thisEl) {
+				const zoomBlurBackground = thisEl.querySelector('.zoom_blur_background');
 				return new Promise(function(resolve, reject) {
-					console.log("setSource");
-					const source = picture.getAttribute('data-source');
-					if (source) {
-						thisEl.querySelector('.zoomed_image_source').innerText = 'Quelle: ' + source;
-					} else {
-						thisEl.querySelector('.zoomed_image_source').innerText = '';
-					}
-
-					setTimeout(function() {
-						resolve();
-					}, 1000);
+					zoomBlurBackground.classList.add("closeable");
+					resolve();
 				});
 			}
 
@@ -170,19 +168,20 @@ export default {
 				.then(centerImagePX)
 				.then(centerImagePC)
 				.then(extendPX)
-				.then(extendPC);
+				.then(extendPC)
+				.then(activateClosing(this.$el));
 		});
 	},
 	methods: {
 		scroll(direction) {
-			const picture_container = $(this.$el).find('.picture_container')[0];
-			const pictures = picture_container.childNodes;
+			const picture_container = this.$el.querySelector('.picture_container');
+			const pictures = picture_container.children;
 
 			const new_current_id = this.activeId + direction;
 
 			let new_current_picture;
 			for (let i = 0; i < pictures.length; i++) {
-				if ($(pictures[i]).attr('data-id') == new_current_id) {
+				if (pictures[i].getAttribute('data-id') == new_current_id) {
 					new_current_picture = pictures[i];
 				}
 			}
@@ -198,21 +197,26 @@ export default {
 			}
 		},
 		closeZoom() {
-			const zoomedImage = this.$el.querySelector('.zoomed_image');
 			const zoomBlurBackground = this.$el.querySelector('.zoom_blur_background');
 
-			const self = this;
-			zoomBlurBackground.style.opacity = 0;
+			if(zoomBlurBackground.classList.contains("closeable")) {
+				const zoomedImage = this.$el.querySelector('.zoomed_image');
 
-			setTimeout(function() {
-				self.$el.classList.remove('zoom');
-				zoomBlurBackground.style.display = 'none';
-			}, 500);
+				const self = this;
+				zoomBlurBackground.style.opacity = 0;
 
-			zoomedImage.style.display = 'none';
-			zoomedImage.removeAttribute('style');
-			this.currentWebpSrc = '';
-			this.currentJpgSrc = '';
+				setTimeout(function() {
+					self.$el.classList.remove('zoom');
+					zoomBlurBackground.style.display = 'none';
+				}, 400);
+
+				zoomedImage.style.display = 'none';
+				zoomedImage.removeAttribute('style');
+				this.currentWebpSrc = '';
+				this.currentJpgSrc = '';
+
+				zoomBlurBackground.classList.remove("closeable");
+			}
 		},
 		getOffset(el) {
 	    let _x = 0;
@@ -307,7 +311,7 @@ export default {
 		width: 100%;
 		height: 100%;
 		opacity: 0;
-		transition: opacity 0.5s;
+		transition: opacity 0.4s;
 	}
 	.gallery.zoom .zoom_blur_background {
 		z-index: 2000;
@@ -332,9 +336,9 @@ export default {
 		z-index: 2002;
 	}
 	.zoomed_image.topLeftTransition {
-		transition: left 1s linear, top 1s linear;
+		transition: left 0.5s linear, top 0.5s linear;
 	}
 	.zoomed_image.maxWidthHeightTransition {
-		transition: max-width 1s linear, max-height 1s linear;
+		transition: max-width 0.5s linear, max-height 0.5s linear;
 	}
 </style>
