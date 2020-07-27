@@ -3,7 +3,7 @@
 		<div class="zoom_blur_background" @click="closeZoom" />
 		<picture @click="closeZoom">
 			<source :srcset="currentWebpSrc" type="image/webp">
-			<img class="zoomed_image" :src="currentJpgSrc" type="image/jpg">
+			<img class="zoomed_image" :src="currentJpgSrc" type="image/jpg" alt="">
 		</picture>
 		<span class="zoomed_image_source" />
 		<div class="gallery_control_container">
