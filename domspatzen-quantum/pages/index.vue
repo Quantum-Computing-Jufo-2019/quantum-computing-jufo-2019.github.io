@@ -73,8 +73,10 @@ export default {
 		padding-bottom: 1%;
 		padding-top: 1%;
 	}
-	html.phone .section:not(#footer_section):not(#first_section){
-		padding-bottom: 5%;
-		padding-top: 2%;
+	@media (pointer:none), (pointer:coarse) {
+		.section:not(#footer_section):not(#first_section){
+			padding-bottom: 5%;
+			padding-top: 2%;
+		}
 	}
 </style>
