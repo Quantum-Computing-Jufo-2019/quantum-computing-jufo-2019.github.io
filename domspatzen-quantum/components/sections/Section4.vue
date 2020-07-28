@@ -30,9 +30,6 @@ export default {
 	#fourth_section{
 			background-color: var(--blue);
 	}
-	html.phone #fourth_section{
-			background-color: white;
-	}
 	#fourth_section p, #fourth_section ul{
 			margin-left: 5%;
 			margin-right:5%;
@@ -43,5 +40,10 @@ export default {
 	#thanks_list li{
 		font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
 		font-size: x-large;
+	}
+	@media (pointer:none), (pointer:coarse) {
+		#fourth_section{
+				background-color: white;
+		}
 	}
 </style>
