@@ -61,7 +61,7 @@ export default {
 		}
 		#main_headline {
 			font-size: 30px;
-	    overflow-wrap: break-word;
+			overflow-wrap: break-word;
 		}
 	}
 	@media (hover: hover) and (pointer: fine) {
