@@ -1,5 +1,5 @@
 <template>
-	<div id="cookie_alert">
+	<div v-if="cookieAlertActive" id="cookie_alert">
 		<p id="cookie_alert_headline">
 			Darf diese Website Cookies verwenden?
 		</p>
@@ -15,6 +15,11 @@
 </template>
 <script>
 export default {
+	data() {
+		return {
+			cookieAlertActive: false,
+		};
+	},
 	mounted() {
 		this.check_cookie_permission();
 	},
@@ -28,7 +33,7 @@ export default {
 		},
 		check_cookie_permission() {
 			if (this.getCookie('cookie_level') === '') {
-				this.$el.style.display = '';
+				this.cookieAlertActive = true;
 			} else {
 				this.cookies_accepted();
 			}
@@ -39,10 +44,10 @@ export default {
 		accept_cookies() {
 			this.setCookie('cookie_level', '1', 400);
 			this.cookies_accepted();
-			this.$el.style.display = 'none';
+			this.cookieAlertActive = false;
 		},
 		decline_cookies() {
-			this.$el.style.display = 'none';
+			this.cookieAlertActive = false;
 		},
 		getCookie(cname) {
 			const name = cname + '=';
@@ -70,7 +75,6 @@ export default {
 </script>
 <style>
 	#cookie_alert{
-			display: none;
 			position: fixed;
 			bottom: 0px;
 			left: 50%;
