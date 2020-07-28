@@ -11,8 +11,10 @@
 		margin-right: 10%;
 		margin-left: 10%;
 	}
-	html.phone #downloads_flexbox{
-			flex-flow: column;
-			flex-wrap: nowrap;
+	@media (pointer:none), (pointer:coarse) {
+		#downloads_flexbox{
+				flex-flow: column;
+				flex-wrap: nowrap;
+		}
 	}
 </style>
