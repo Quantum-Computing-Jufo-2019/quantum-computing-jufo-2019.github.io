@@ -87,16 +87,10 @@ export default {
 			padding-bottom: 10px;
 			z-index: 3000;
 	}
-	html.mobile #cookie_alert{
-			width: 100%;
-			height: 40%;
-	}
 	#cookie_alert_headline{
 			text-align: center;
 			margin-bottom: 20px;
 			font-size: xx-large;
-	}
-	html.phone #cookie_alert_headline{
 	}
 	.cookie_alert_button{
 			background-color: white;
@@ -109,45 +103,53 @@ export default {
 			background-color: var(--green2);
 			font-weight: bold;
 	}
-	html.phone .cookie_alert_button{
-			width: 90%;
-			height: 100px;
-			font-size: xx-large;
-			border: 5px solid gray;
-	}
-	html:not(.phone) .cookie_alert_button:not(:last-child){
-			margin-right: 10px;
-	}
-	html.phone .cookie_alert_button{
-			margin-bottom: 10px;
-	}
-	html:not(.mobile) .cookie_alert_button:hover{
-			background-color: gray;
-	}
 	#cookie_alert_button_conatainer{
 			display: flex;
 			flex-flow: row;
 			flex-wrap: nowrap;
 	}
-	html.phone #cookie_alert_button_conatainer{
-			flex-flow: column;
-			flex-wrap: nowrap;
-			align-items: center;
-	}
-	html.phone .cookie_alert{
+	@media (pointer:none), (pointer:coarse) {
+		#cookie_alert{
 			width: 100%;
-			height: 100%;
+			height: 40%;
+		}
+		.cookie_alert_button{
+				width: 90%;
+				height: 100px;
+				font-size: xx-large;
+				border: 5px solid gray;
+		}
+		.cookie_alert_button{
+				margin-bottom: 10px;
+		}
+		#cookie_alert_button_conatainer{
+				flex-flow: column;
+				flex-wrap: nowrap;
+				align-items: center;
+		}
+		.cookie_alert{
+				width: 100%;
+				height: 100%;
+		}
+		.cookie_alert .swal2-content{
+				font-size: 50px;
+		}
+		.cookie_alert .swal2-actions{
+				width: 100%;
+		}
+		.cookie_alert button{
+				width: 50%;
+		}
+		.cookie_alert_container{
+				padding: 0;
+		}
 	}
-	html.phone .cookie_alert .swal2-content{
-			font-size: 50px;
-	}
-	html.phone .cookie_alert .swal2-actions{
-			width: 100%;
-	}
-	html.phone .cookie_alert button{
-			width: 50%;
-	}
-	html.phone .cookie_alert_container{
-			padding: 0;
+	@media (hover: hover) and (pointer: fine) {
+		.cookie_alert_button:not(:last-child){
+				margin-right: 10px;
+		}
+		.cookie_alert_button:hover{
+				background-color: gray;
+		}
 	}
 </style>

@@ -36,19 +36,23 @@ export default {
 		font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 		font-size: x-large;
 	}
-	html:not(.phone) .date {
-			display: flex;
-	}
-	html.phone .date {
+	@media (pointer:none), (pointer:coarse) {
+		.date_icon {
+				display: none;
+		}
+		.date_text{
+			font-size: x-large;
 			width: 100%;
-			margin: 0px;
+			text-align: center
+		}
+		.date {
+				width: 100%;
+				margin: 0px;
+		}
 	}
-	html.phone .date_icon {
-			display: none;
-	}
-	html.phone .date_text{
-		font-size: x-large;
-		width: 100%;
-		text-align: center
+	@media (hover: hover) and (pointer: fine) {
+		.date {
+				display: flex;
+		}
 	}
 </style>

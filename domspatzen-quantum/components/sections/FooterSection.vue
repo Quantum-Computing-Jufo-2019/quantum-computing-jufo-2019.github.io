@@ -21,10 +21,6 @@
 		padding-top: 1%;
 		padding-bottom: 1%;
 	}
-	html.phone #footer_section{
-			padding-top: 3%;
-			padding-bottom: 2%;
-	}
 	.footer_text{
 		margin: 0px;
 		margin-bottom: 4px;
@@ -34,15 +30,23 @@
 		padding-right: 6px;
 		font-size: x-large;
 	}
-	html:not(.phone) .footer_text_phone_copyright {
-		display: none;
+	@media (pointer:none), (pointer:coarse) {
+		.footer_text_copyright {
+			display: none;
+		}
+		.footer_text_phone_copyright {
+			display: flex;
+			flex-flow: column;
+			flex-wrap: nowrap;
+		}
+		#footer_section{
+				padding-top: 3%;
+				padding-bottom: 2%;
+		}
 	}
-	html.phone .footer_text_phone_copyright {
-		display: flex;
-		flex-flow: column;
-    flex-wrap: nowrap;
-	}
-	html.phone .footer_text_copyright {
-		display: none;
+	@media (hover: hover) and (pointer: fine) {
+		.footer_text_phone_copyright {
+			display: none;
+		}
 	}
 </style>

@@ -264,9 +264,6 @@ export default {
 		vertical-align: middle;
 		display: flex;
 	}
-  html.mobile .gallery_control_container {
-    display: none;
-  }
 	.gallery_control {
 		width: 100%;
     -moz-user-select: none;
@@ -283,9 +280,6 @@ export default {
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 	}
-  html.mobile .pictureContainer {
-    width: 100%;
-  }
 	.pictureContainer::-webkit-scrollbar {
 			width: 0;
 			height: 0;
@@ -312,9 +306,6 @@ export default {
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	/*html.mobile .zoom_blur_background {
-		display: none;
-		}*/
 	.zoomed_image_source {
 		display: none;
 		z-index: 2002;
@@ -329,5 +320,13 @@ export default {
 	}
 	.zoomed_image.maxWidthHeightTransition {
 		transition: max-width 0.5s linear, max-height 0.5s linear;
+	}
+	@media (pointer:none), (pointer:coarse) {
+		.pictureContainer {
+			width: 100%;
+		}
+		.gallery_control_container {
+			display: none;
+		}
 	}
 </style>

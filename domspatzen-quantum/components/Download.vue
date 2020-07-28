@@ -45,16 +45,18 @@ export default {
     -webkit-user-select: none;
     user-select: none;
   }
-	html.phone .download_icon {
-		display: none;
-	}
 	.download_text {
 		text-align: center;
 		font-size: 20px;
 		margin: 4px 0 4px 0;
 	}
-	html.phone .download_text {
-			font-size: 30px;
-			overflow-wrap: break-word;
+	@media (pointer:none), (pointer:coarse) {
+		.download_text {
+				font-size: 30px;
+				overflow-wrap: break-word;
+		}
+		.download_icon {
+			display: none;
+		}
 	}
 </style>

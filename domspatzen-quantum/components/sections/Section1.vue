@@ -47,16 +47,6 @@ export default {
 		transform: translate(-50%, 50%);
 		width: 90%;
 	}
-
-	html:not(.phone) #main_headline {
-		font-size: -webkit-xxx-large;
-	}
-
-	html.phone #main_headline {
-		font-size: 30px;
-    overflow-wrap: break-word;
-	}
-
 	#scroll_button {
 		position: absolute;
 		bottom: 30px;
@@ -65,12 +55,21 @@ export default {
 		transform: translateX(-50%);
 		background-color: white;
 	}
-
-	html.phone #scroll_button {
-		display: none;
+	@media (pointer:none), (pointer:coarse) {
+		#scroll_button {
+			display: none;
+		}
+		#main_headline {
+			font-size: 30px;
+			overflow-wrap: break-word;
+		}
 	}
-
-	html:not(.mobile) #scroll_button:hover {
-		background-color: lightgray;
+	@media (hover: hover) and (pointer: fine) {
+		#scroll_button:hover {
+			background-color: lightgray;
+		}
+		#main_headline {
+			font-size: -webkit-xxx-large;
+		}
 	}
 </style>
