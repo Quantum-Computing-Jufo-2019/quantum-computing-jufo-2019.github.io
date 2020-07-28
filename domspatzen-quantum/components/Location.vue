@@ -39,20 +39,24 @@ export default {
 	.location_link{
 			text-decoration: none
 	}
-	html:not(.phone) .location{
-			display: flex;
-	}
-	html.phone .location{
+	@media (pointer:none), (pointer:coarse) {
+		.location_icon {
+				display: none;
+		}
+		.location_text{
+			font-size: xx-large;
 			width: 100%;
-			margin: 0px;
+			text-align: center;
+			font-weight: bold;
+		}
+		.location{
+				width: 100%;
+				margin: 0px;
+		}
 	}
-	html.phone .location_icon {
-			display: none;
-	}
-	html.mobile .location_text{
-		font-size: xx-large;
-		width: 100%;
-		text-align: center;
-		font-weight: bold;
+	@media (hover: hover) and (pointer: fine) {
+		.location{
+				display: flex;
+		}
 	}
 </style>
