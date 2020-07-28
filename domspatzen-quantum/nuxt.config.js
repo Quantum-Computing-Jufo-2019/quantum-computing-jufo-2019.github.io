@@ -16,11 +16,6 @@ export default {
 		],
 		script: [
 			{
-				src: 'https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js',
-				type: 'text/javascript',
-				async: true,
-			},
-			{
 				src: 'https://www.googletagmanager.com/gtag/js?id=UA-139965444-1',
 				type: 'text/javascript',
 				async: true,
