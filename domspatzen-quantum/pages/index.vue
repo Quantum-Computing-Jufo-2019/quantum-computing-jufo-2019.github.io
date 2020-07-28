@@ -34,27 +34,6 @@ export default {
 		FooterSection,
 		SelectionsContainer,
 	},
-	mounted() {
-		this.checkDeviceType();
-	},
-	methods: {
-		checkDeviceType() {
-			// eslint-disable-next-line
-			const md = new MobileDetect(window.navigator.userAgent);
-			const html = document.getElementsByTagName('html')[0];
-
-			this.setClassState(md.mobile(), html, 'mobile');
-			this.setClassState(md.phone(), html, 'phone');
-			this.setClassState(md.tablet(), html, 'tablet');
-		},
-		setClassState(condition, element, className) {
-			if (condition) {
-				element.classList.add(className);
-			} else {
-				element.classList.remove(className);
-			}
-		},
-	},
 };
 </script>
 
