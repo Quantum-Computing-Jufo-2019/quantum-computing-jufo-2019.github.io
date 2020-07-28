@@ -35,7 +35,7 @@ export default {
 			const pictures = pictureContainer.children;
 
 			for (let i = 0; i < pictures.length; i++) {
-				if (pictures[i].getAttribute('data-id') === id) {
+				if (parseInt(pictures[i].getAttribute('data-id')) === id) {
 					picture = pictures[i];
 				}
 			}
@@ -170,7 +170,7 @@ export default {
 
 			let newCurrentPicture;
 			for (let i = 0; i < pictures.length; i++) {
-				if (pictures[i].getAttribute('data-id') === newCurrentId) {
+				if (parseInt(pictures[i].getAttribute('data-id')) === newCurrentId) {
 					newCurrentPicture = pictures[i];
 				}
 			}
