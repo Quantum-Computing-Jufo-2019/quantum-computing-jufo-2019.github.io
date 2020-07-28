@@ -37,7 +37,7 @@
 		.footer_text_phone_copyright {
 			display: flex;
 			flex-flow: column;
-	    flex-wrap: nowrap;
+			flex-wrap: nowrap;
 		}
 		#footer_section{
 				padding-top: 3%;

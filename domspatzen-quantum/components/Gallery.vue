@@ -326,7 +326,7 @@ export default {
 			width: 100%;
 		}
 		.gallery_control_container {
-	    display: none;
-	  }
+			display: none;
+		}
 	}
 </style>
