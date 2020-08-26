@@ -34,15 +34,16 @@ export default {
 	],
 	pwa: {
 		icon: {
-			iconSrc: 'assets/logo.png',
-      sizes: [64, 120, 144, 152, 192, 384, 512],
-      purpose: ['any', 'maskable'],
+			/* iconSrc: 'assets/logo.png', */
+			fileName: 'logo.png',
+			sizes: [ 64, 120, 144, 152, 192, 384, 512, ],
+			purpose: [ 'any', 'maskable', ],
 		},
-    manifest: {
-      name: 'Domspatzen Quantum',
-      lang: 'de',
-      background_color: '#8ab833',
-    },
+		manifest: {
+			name: 'Domspatzen Quantum',
+			lang: 'de',
+			background_color: '#8ab833',
+		},
 	},
 	build: {
 		extend(config, ctx) {
