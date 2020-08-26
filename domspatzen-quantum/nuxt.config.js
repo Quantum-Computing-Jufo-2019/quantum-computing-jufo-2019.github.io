@@ -22,7 +22,7 @@ export default {
 			},
 		],
 	},
-	loading: { color: '#fff', },
+	loading: { color: '#8ab833', },
 	buildModules: [
 		'@aceforth/nuxt-optimized-images',
 	],
@@ -35,7 +35,14 @@ export default {
 	pwa: {
 		icon: {
 			iconSrc: 'assets/logo.png',
+      sizes: [64, 120, 144, 152, 192, 384, 512],
+      purpose: ['any', 'maskable'],
 		},
+    manifest: {
+      name: 'Domspatzen Quantum',
+      lang: 'de',
+      background_color: '#8ab833',
+    },
 	},
 	build: {
 		extend(config, ctx) {
