@@ -1,11 +1,10 @@
 <template>
 	<picture
 		class="picture"
-		:data-id="id"
 		:data-source="source"
 		:data-jpg-src="require('~/assets/pictures/' + src)"
 		:data-webp-src="require('~/assets/pictures/' + src + '?webp')"
-		@click="$parent.$emit('zoomPicture', id)"
+		@click="$parent.$emit('zoomPicture', getId())"
 	>
 		<source :srcSet="require('~/assets/pictures/' + src + '?format=webp&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/webp">
 		<source :srcSet="require('~/assets/pictures/' + src + '?format=jpg&resize&sizes[]=200&sizes[]=300&sizes[]=600&sizes[]=700').srcSet" type="image/jpg">
@@ -15,10 +14,6 @@
 <script>
 export default {
 	props: {
-		id: {
-			type: Number,
-			default: 0,
-		},
 		src: {
 			type: String,
 			default: '',
@@ -30,6 +25,19 @@ export default {
 		source: {
 			type: String,
 			default: '',
+		},
+	},
+	methods: {
+		getId: function() {
+			console.log(this.$el);
+			let pictures = this.$el.parentNode.children;
+			for(let id in pictures) {
+				console.log(id);
+				console.log(pictures[id]);
+				if(pictures[id] == this.$el) {
+					return id;
+				}
+			}
 		},
 	},
 };

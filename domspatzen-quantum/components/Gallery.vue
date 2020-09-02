@@ -24,21 +24,16 @@ export default {
 		return {
 			currentJpgSrc: '',
 			currentWebpSrc: '',
-			activeId: 1,
+			activeId: 0,
 		};
 	},
 	mounted() {
 		this.$on('zoomPicture', function(id) {
-			let picture;
 			const pictureContainer = this.$el.querySelector('.pictureContainer');
 
 			const pictures = pictureContainer.children;
 
-			for (let i = 0; i < pictures.length; i++) {
-				if (parseInt(pictures[i].getAttribute('data-id')) === id) {
-					picture = pictures[i];
-				}
-			}
+			let picture = this.getPictureElementById(id);
 
 			this.$el.classList.add('zoom');
 
@@ -162,18 +157,19 @@ export default {
 		});
 	},
 	methods: {
+		getPictureElementById(id) {
+			const pictureContainer = this.$el.querySelector('.pictureContainer');
+			const pictures = pictureContainer.children;
+
+			return pictures[id];
+		},
 		scroll(direction) {
 			const pictureContainer = this.$el.querySelector('.pictureContainer');
 			const pictures = pictureContainer.children;
 
 			const newCurrentId = this.activeId + direction;
 
-			let newCurrentPicture;
-			for (let i = 0; i < pictures.length; i++) {
-				if (parseInt(pictures[i].getAttribute('data-id')) === newCurrentId) {
-					newCurrentPicture = pictures[i];
-				}
-			}
+			let newCurrentPicture = this.getPictureElementById(newCurrentId);
 
 			if (newCurrentPicture) {
 				this.scrollToElement({
