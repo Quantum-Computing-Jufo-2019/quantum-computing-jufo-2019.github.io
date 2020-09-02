@@ -13,15 +13,15 @@
 </template>
 
 <script>
-import CookieAlert from '~/components/CookieAlert.vue';
-import Section1 from '~/components/sections/Section1.vue';
-import Section2 from '~/components/sections/Section2.vue';
-import Section3 from '~/components/sections/Section3.vue';
-import Section4 from '~/components/sections/Section4.vue';
-import Section5 from '~/components/sections/Section5.vue';
-import FooterSection from '~/components/sections/FooterSection.vue';
+import CookieAlert from "~/components/CookieAlert.vue";
+import Section1 from "~/components/sections/Section1.vue";
+import Section2 from "~/components/sections/Section2.vue";
+import Section3 from "~/components/sections/Section3.vue";
+import Section4 from "~/components/sections/Section4.vue";
+import Section5 from "~/components/sections/Section5.vue";
+import FooterSection from "~/components/sections/FooterSection.vue";
 
-import SelectionsContainer from '~/components/SelectionsContainer.vue';
+import SelectionsContainer from "~/components/SelectionsContainer.vue";
 
 export default {
 	components: {

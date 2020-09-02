@@ -121,15 +121,15 @@
 	</div>
 </template>
 <script>
-import Gallery from 'modern-vue-gallery/src/Gallery.vue';
-import GalleryImage from 'modern-vue-gallery/src/GalleryImage.vue';
-import Location from '~/components/Location.vue';
-import Date from '~/components/Date.vue';
-import News from '~/components/News.vue';
-import NewsContainer from '~/components/NewsContainer.vue';
+import Gallery from "modern-vue-gallery/src/Gallery.vue";
+import GalleryImage from "modern-vue-gallery/src/GalleryImage.vue";
+import Location from "~/components/Location.vue";
+import Date from "~/components/Date.vue";
+import News from "~/components/News.vue";
+import NewsContainer from "~/components/NewsContainer.vue";
 
-import Spacer from '~/components/Spacer.vue';
-import Headline from '~/components/Headline.vue';
+import Spacer from "~/components/Spacer.vue";
+import Headline from "~/components/Headline.vue";
 
 export default {
 	components: {

@@ -17,11 +17,11 @@
 export default {
 	methods: {
 		scrollToSection2() {
-			const yPosition = document.getElementById('second_section').offsetTop;
+			const yPosition = document.getElementById("second_section").offsetTop;
 
 			window.scroll({
 				top: yPosition,
-				behavior: 'smooth',
+				behavior: "smooth",
 			});
 		},
 	},
