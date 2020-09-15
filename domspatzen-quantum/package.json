@@ -17,7 +17,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "modern-vue-gallery": "^1.4.1",
     "mozjpeg": "^7.0.0",
-    "nuxt": "^2.14.4",
+    "nuxt": "^2.14.5",
     "responsive-loader": "^2.1.1",
     "vue-lazyload": "^1.3.3"
   },
