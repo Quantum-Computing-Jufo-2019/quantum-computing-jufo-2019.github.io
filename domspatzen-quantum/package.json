@@ -14,7 +14,7 @@
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^3.2.2",
+    "@nuxtjs/pwa": "^3.3.1",
     "modern-vue-gallery": "^1.5.2",
     "mozjpeg": "^7.0.0",
     "nuxt": "^2.14.7",
