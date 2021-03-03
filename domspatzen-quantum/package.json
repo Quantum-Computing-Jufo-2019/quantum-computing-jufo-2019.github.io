@@ -31,7 +31,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
-    "imagemin-svgo": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "lqip-loader": "^2.2.1",
     "sharp": "^0.27.2",
     "sqip-loader": "^1.0.0",
