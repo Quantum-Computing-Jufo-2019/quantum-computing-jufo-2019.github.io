@@ -30,7 +30,7 @@
     "eslint-config-jonathantreffler": "^1.5.1",
     "eslint-plugin-nuxt": "^2.0.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.1",
+    "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "lqip-loader": "^2.2.1",
     "sharp": "^0.27.2",
