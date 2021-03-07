@@ -35,6 +35,7 @@ export default {
 		text-decoration: none;
 		font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 		font-size: x-large;
+    white-space: nowrap;
 	}
 	@media (pointer:none), (pointer:coarse) {
 		.date_icon {
