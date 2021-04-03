@@ -8,4 +8,8 @@
 
 The Website for our Jugend Forscht Project
 
+### Pagespeed
+<a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fdomspatzen-quantum.de%2F&tab=desktop" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/Quantum-Computing-Jufo-2019/quantum-computing-jufo-2019.github.io/dev/pagespeed.svg"></a>
+
+### Screenshot
 ![](https://github.com/Quantum-Computing-Jufo-2019/domspatzen-quantum.de/raw/dev/img/screenshot.png)
