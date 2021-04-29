@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/domspatzen-quantum"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  assignees:
+  - JonathanTreffler
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
