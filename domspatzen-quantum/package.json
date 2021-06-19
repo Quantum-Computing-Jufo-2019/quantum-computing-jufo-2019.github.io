@@ -33,7 +33,7 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "lqip-loader": "^2.2.1",
-    "sharp": "^0.28.1",
+    "sharp": "^0.28.3",
     "sqip-loader": "^1.0.0",
     "webp-loader": "^0.6.0"
   }
