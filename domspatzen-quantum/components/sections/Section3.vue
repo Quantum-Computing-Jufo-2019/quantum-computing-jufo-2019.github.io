@@ -103,6 +103,7 @@
 				<galleryImage src="39.jpg" alt="Gruppenfoto" data-source="Bundesregierung / Sandra Steins" />
 				<galleryImage src="40.jpg" alt="Gruppenfoto" data-source="" />
 				<galleryImage src="41.jpg" alt="Gruppenfoto" data-source="" />
+        <galleryImage src="42.jpg" alt="Gruppenfoto" data-source="Bundeskanzlerin Instagram" />
 			</gallery>
 			<spacer />
 
